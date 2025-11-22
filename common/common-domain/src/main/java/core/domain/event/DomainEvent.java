@@ -1,4 +1,4 @@
-package microservices.practice.event;
+package core.domain.event;
 
 public interface DomainEvent<T> {
 

@@ -1,9 +1,8 @@
 package core.domain.entity;
 
 import core.domain.valueobject.OrderItemId;
-import microservices.practice.entity.BaseEntity;
-import microservices.practice.valueobject.Money;
-import microservices.practice.valueobject.OrderId;
+import core.domain.valueobject.Money;
+import core.domain.valueobject.OrderId;
 
 public class OrderItem extends BaseEntity<OrderItemId> {
     private OrderId orderId;

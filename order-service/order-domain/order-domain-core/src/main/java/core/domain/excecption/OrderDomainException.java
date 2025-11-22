@@ -1,6 +1,6 @@
 package core.domain.excecption;
 
-import microservices.practice.exception.DomainException;
+import core.domain.exception.DomainException;
 
 public class OrderDomainException extends DomainException {
 

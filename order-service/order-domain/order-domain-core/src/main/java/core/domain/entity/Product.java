@@ -1,8 +1,7 @@
 package core.domain.entity;
 
-import microservices.practice.entity.BaseEntity;
-import microservices.practice.valueobject.Money;
-import microservices.practice.valueobject.ProductId;
+import core.domain.valueobject.Money;
+import core.domain.valueobject.ProductId;
 
 public class Product extends BaseEntity<ProductId> {
     private String name;

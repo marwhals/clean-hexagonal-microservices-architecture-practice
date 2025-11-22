@@ -1,4 +1,4 @@
-package microservices.practice.entity;
+package core.domain.entity;
 
 import java.util.Objects;
 

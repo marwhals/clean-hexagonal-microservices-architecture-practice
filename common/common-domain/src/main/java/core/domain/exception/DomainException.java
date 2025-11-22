@@ -1,4 +1,4 @@
-package microservices.practice.exception;
+package core.domain.exception;
 
 public class DomainException extends RuntimeException {
 

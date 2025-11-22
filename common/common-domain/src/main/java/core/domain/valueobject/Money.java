@@ -1,4 +1,4 @@
-package microservices.practice.valueobject;
+package core.domain.valueobject;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

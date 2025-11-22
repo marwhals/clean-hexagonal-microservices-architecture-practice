@@ -1,11 +1,7 @@
 package core.domain.entity;
 
 import core.domain.excecption.OrderDomainException;
-import core.domain.valueobject.OrderItemId;
-import core.domain.valueobject.StreetAddress;
-import core.domain.valueobject.TrackingId;
-import microservices.practice.entity.AggregateRoot;
-import microservices.practice.valueobject.*;
+import core.domain.valueobject.*;
 
 import java.util.List;
 import java.util.UUID;
@@ -34,6 +30,49 @@ public class Order extends AggregateRoot<OrderId> {
         validateItemsPrice();
     }
 
+    public void pay() {
+        if (orderStatus != OrderStatus.PENDING) {
+            throw new OrderDomainException("Order is not in the correct state for pay operation!");
+        }
+        orderStatus = OrderStatus.PAID;
+    }
+
+    public void approve() {
+        if (orderStatus != OrderStatus.PAID) {
+            throw new OrderDomainException("Order is not in correct state for approve operation!");
+        }
+        orderStatus = OrderStatus.APPROVED;
+    }
+
+    public void initCancel(List<String> failureMessages) { //SAGA - Compensating transaction
+        if (orderStatus != OrderStatus.PAID) {
+            throw new OrderDomainException("Order is not in correct state for initCancel operation!");
+        }
+        orderStatus = OrderStatus.CANCELLING;
+        updateFailureMessages(failureMessages);
+    }
+
+    private void updateFailureMessages(List<String> failureMessages) {
+        if (this.failureMessages != null && failureMessages != null) {
+            this.failureMessages.addAll(failureMessages
+                    .stream()
+                    .filter(message -> !message.isEmpty())
+                    .toList()
+            );
+        }
+        if (this.failureMessages == null) {
+            this.failureMessages = failureMessages;
+        }
+    }
+
+    public void cancel(List<String> failureMessages) {
+        if (!(orderStatus == OrderStatus.CANCELLING || orderStatus == OrderStatus.PENDING)) {
+            throw new OrderDomainException("Order is not in correct state for cancel operation");
+        }
+        orderStatus = OrderStatus.CANCELLED;
+        updateFailureMessages(failureMessages);
+    }
+
     private void validateItemsPrice() {
         Money orderItemsTotal = items.stream().map(orderItem -> {
             validateItemPrice(orderItem);
@@ -52,7 +91,6 @@ public class Order extends AggregateRoot<OrderId> {
                     " is not valid for product " + orderItem.getProduct().getId().getValue());
         }
     }
-
 
     private void validateTotalPrice() {
         if (price == null || !price.isGreaterThanZero()) {
