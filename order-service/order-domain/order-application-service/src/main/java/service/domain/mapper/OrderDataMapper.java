@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 import service.domain.dto.create.CreateOrderCommand;
 import service.domain.dto.create.CreateOrderResponse;
 import service.domain.dto.create.OrderAddress;
+import service.domain.dto.track.TrackOrderResponse;
 
 import java.util.List;
 import java.util.UUID;
@@ -50,6 +51,14 @@ public class OrderDataMapper {
         return CreateOrderResponse.builder()
                 .orderTrackingId(order.getTrackingId().getValue())
                 .orderStatus(order.getOrderStatus())
+                .build();
+    }
+
+    public TrackOrderResponse orderToTrackOrderResponse(Order order) {
+        return TrackOrderResponse.builder()
+                .orderTrackingId(order.getTrackingId().getValue())
+                .orderStatus(order.getOrderStatus())
+                .failureMessages(order.getFailureMessages())
                 .build();
     }
 
