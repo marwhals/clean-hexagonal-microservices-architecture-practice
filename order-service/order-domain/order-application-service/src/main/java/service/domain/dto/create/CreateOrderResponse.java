@@ -1,11 +1,12 @@
 package service.domain.dto.create;
 
 import core.domain.valueobject.OrderStatus;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 
-import javax.validation.constraints.NotNull;
+
 import java.util.UUID;
 
 @Getter
