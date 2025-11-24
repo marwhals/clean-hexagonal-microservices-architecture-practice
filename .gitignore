@@ -38,3 +38,4 @@ build/
 .DS_Store
 /.idea/
 /design_diagrams/
+/infrastructure/docker-compose/volumes/
