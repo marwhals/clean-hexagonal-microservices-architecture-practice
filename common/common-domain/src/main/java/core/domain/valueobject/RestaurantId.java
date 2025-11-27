@@ -1,7 +1,9 @@
 package core.domain.valueobject;
 
-public class RestaurantId extends BaseId {
-    public RestaurantId(Object value) {
+import java.util.UUID;
+
+public class RestaurantId extends BaseId<UUID> {
+    public RestaurantId(UUID value) {
         super(value);
     }
 }
