@@ -55,6 +55,9 @@ public class OrderCreateHelper {
         return orderCreatedEvent;
     }
 
+    /**
+     * Uses materialized view
+     */
     private Restaurant checkRestaurant(CreateOrderCommand createOrderCommand) {
         Restaurant restaurant = orderDataMapper.createOrderCommandToRestaurant(createOrderCommand);
         Optional<Restaurant> optionalRestaurant = restaurantRepository.findRestaurantInformation(restaurant);
