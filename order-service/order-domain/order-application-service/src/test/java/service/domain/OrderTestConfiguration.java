@@ -5,10 +5,8 @@ import core.domain.OrderDomainServiceImpl;
 import org.mockito.Mockito;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import service.domain.mapper.OrderDataMapper;
 import service.domain.ports.output.message.publisher.payment.OrderCancelledPaymentRequestMessagePublisher;
-import service.domain.ports.output.message.publisher.payment.OrderCreatedPaymentReqeustMessagePublisher;
+import service.domain.ports.output.message.publisher.payment.OrderCreatedPaymentRequestMessagePublisher;
 import service.domain.ports.output.message.publisher.restaurantapproval.OrderPaidRestaurantRequestMessagePublisher;
 import service.domain.ports.output.repository.CustomerRepository;
 import service.domain.ports.output.repository.OrderRepository;
@@ -18,8 +16,8 @@ import service.domain.ports.output.repository.RestaurantRepository;
 class OrderTestConfiguration {
 
     @Bean
-    public OrderCreatedPaymentReqeustMessagePublisher orderCreatedPaymentReqeustMessagePublisher() {
-        return Mockito.mock(OrderCreatedPaymentReqeustMessagePublisher.class);
+    public OrderCreatedPaymentRequestMessagePublisher orderCreatedPaymentReqeustMessagePublisher() {
+        return Mockito.mock(OrderCreatedPaymentRequestMessagePublisher.class);
     }
 
     @Bean

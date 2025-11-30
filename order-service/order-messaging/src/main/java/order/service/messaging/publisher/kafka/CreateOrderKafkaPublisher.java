@@ -7,11 +7,11 @@ import lombok.extern.slf4j.Slf4j;
 import order.service.messaging.mapper.OrderMessagingDataMapper;
 import org.springframework.stereotype.Component;
 import service.domain.config.OrderServiceConfigData;
-import service.domain.ports.output.message.publisher.payment.OrderCreatedPaymentReqeustMessagePublisher;
+import service.domain.ports.output.message.publisher.payment.OrderCreatedPaymentRequestMessagePublisher;
 
 @Slf4j
 @Component
-public class CreateOrderKafkaPublisher implements OrderCreatedPaymentReqeustMessagePublisher {
+public class CreateOrderKafkaPublisher implements OrderCreatedPaymentRequestMessagePublisher {
     //^^^^ Output port in Hexagonal architecture terms
 
 

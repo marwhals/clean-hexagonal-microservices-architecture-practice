@@ -14,6 +14,7 @@ import service.domain.mapper.OrderDataMapper;
 import service.domain.ports.output.repository.CustomerRepository;
 import service.domain.ports.output.repository.OrderRepository;
 import service.domain.ports.output.repository.RestaurantRepository;
+import service.domain.ports.output.message.publisher.payment.OrderCreatedPaymentRequestMessagePublisher;
 
 import java.util.Optional;
 import java.util.UUID;
@@ -32,16 +33,19 @@ public class OrderCreateHelper {
 
     private final OrderDataMapper orderDataMapper;
 
+    private final OrderCreatedPaymentRequestMessagePublisher orderCreatedEventDomainEventPublisher;
+
     public OrderCreateHelper(OrderDomainService orderDomainService,
                              OrderRepository orderRepository,
                              CustomerRepository customerRepository,
                              RestaurantRepository restaurantRepository,
-                             OrderDataMapper orderDataMapper) {
+                             OrderDataMapper orderDataMapper, OrderCreatedPaymentRequestMessagePublisher orderCreatedEventDomainEventPublisher) {
         this.orderDomainService = orderDomainService;
         this.orderRepository = orderRepository;
         this.customerRepository = customerRepository;
         this.restaurantRepository = restaurantRepository;
         this.orderDataMapper = orderDataMapper;
+        this.orderCreatedEventDomainEventPublisher = orderCreatedEventDomainEventPublisher;
     }
 
     @Transactional
@@ -49,7 +53,8 @@ public class OrderCreateHelper {
         checkCustomer(createOrderCommand.getCustomerId());
         Restaurant restaurant = checkRestaurant(createOrderCommand);
         Order order = orderDataMapper.createOrderCommandToOrder(createOrderCommand);
-        OrderCreatedEvent orderCreatedEvent = orderDomainService.validateAndInitiateOrder(order, restaurant);
+        OrderCreatedEvent orderCreatedEvent = orderDomainService.validateAndInitiateOrder(order, restaurant,
+                orderCreatedEventDomainEventPublisher);
         saveOrder(order);
         log.info("Order is created with id: {}", orderCreatedEvent.getOrder().getId().getValue());
         return orderCreatedEvent;
@@ -66,12 +71,12 @@ public class OrderCreateHelper {
             throw new OrderDomainException("Could not find restaurant with restaurant id: "
                     + createOrderCommand.getCustomerId());
         }
-        return  optionalRestaurant.get();
+        return optionalRestaurant.get();
     }
 
     private void checkCustomer(UUID customerId) {
         Optional<Customer> customer = customerRepository.findCustomer(customerId);
-        if(customer.isEmpty()) {
+        if (customer.isEmpty()) {
             log.warn("Could not find customer with customer if: {}", customerId);
             throw new OrderDomainException("Could not find customer with customer id: " + customer);
         }
