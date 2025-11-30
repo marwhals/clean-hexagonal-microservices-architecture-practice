@@ -1,0 +1,331 @@
+digraph "microservices-practice" {
+  node [shape="box",style="rounded",fontname="Helvetica",fontsize="14"]
+  edge [fontsize="10",fontname="Helvetica"]
+
+  // Node Definitions:
+  "microservices-practice:common-domain:jar:compile"[label=<common-domain>]
+  "org.projectlombok:lombok:jar:provided"[label=<lombok<font point-size="10"><br/>(provided)</font>>]
+  "ch.qos.logback:logback-classic:jar:compile"[label=<logback-classic>]
+  "ch.qos.logback:logback-core:jar:compile"[label=<logback-core>]
+  "org.slf4j:slf4j-api:jar:compile"[label=<slf4j-api>]
+  "org.springframework.boot:spring-boot-starter-logging:jar:compile"[label=<spring-boot-starter-logging>]
+  "org.apache.logging.log4j:log4j-to-slf4j:jar:compile"[label=<log4j-to-slf4j>]
+  "org.apache.logging.log4j:log4j-api:jar:compile"[label=<log4j-api>]
+  "org.slf4j:jul-to-slf4j:jar:compile"[label=<jul-to-slf4j>]
+  "microservices-practice:order-domain-core:jar:compile"[label=<order-domain-core>]
+  "microservices-practice:order-application-service:jar:compile"[label=<order-application-service>]
+  "org.springframework:spring-context:jar:compile"[label=<spring-context>]
+  "org.springframework:spring-aop:jar:compile"[label=<spring-aop>]
+  "org.springframework:spring-expression:jar:compile"[label=<spring-expression>]
+  "io.micrometer:micrometer-observation:jar:compile"[label=<micrometer-observation>]
+  "io.micrometer:micrometer-commons:jar:compile"[label=<micrometer-commons>]
+  "org.springframework.boot:spring-boot:jar:compile"[label=<spring-boot>]
+  "org.springframework.boot:spring-boot-starter:jar:compile"[label=<spring-boot-starter>]
+  "org.springframework.boot:spring-boot-autoconfigure:jar:compile"[label=<spring-boot-autoconfigure>]
+  "jakarta.annotation:jakarta.annotation-api:jar:compile"[label=<jakarta.annotation-api>]
+  "org.yaml:snakeyaml:jar:compile"[label=<snakeyaml>]
+  "org.springframework.boot:spring-boot-starter-validation:jar:compile"[label=<spring-boot-starter-validation>]
+  "org.apache.tomcat.embed:tomcat-embed-el:jar:compile"[label=<tomcat-embed-el>]
+  "org.hibernate.validator:hibernate-validator:jar:compile"[label=<hibernate-validator>]
+  "jakarta.validation:jakarta.validation-api:jar:compile"[label=<jakarta.validation-api>]
+  "org.jboss.logging:jboss-logging:jar:compile"[label=<jboss-logging>]
+  "com.fasterxml:classmate:jar:compile"[label=<classmate>]
+  "org.springframework:spring-tx:jar:compile"[label=<spring-tx>]
+  "org.springframework:spring-beans:jar:compile"[label=<spring-beans>]
+  "org.springframework:spring-core:jar:compile"[label=<spring-core>]
+  "org.springframework:spring-jcl:jar:compile"[label=<spring-jcl>]
+  "org.mockito:mockito-core:jar:test"[label=<mockito-core<font point-size="10"><br/>(test)</font>>]
+  "net.bytebuddy:byte-buddy:jar:test"[label=<byte-buddy<font point-size="10"><br/>(test)</font>>]
+  "net.bytebuddy:byte-buddy-agent:jar:test"[label=<byte-buddy-agent<font point-size="10"><br/>(test)</font>>]
+  "org.objenesis:objenesis:jar:test"[label=<objenesis<font point-size="10"><br/>(test)</font>>]
+  "org.springframework.boot:spring-boot-starter-test:jar:test"[label=<spring-boot-starter-test<font point-size="10"><br/>(test)</font>>]
+  "org.springframework.boot:spring-boot-test:jar:test"[label=<spring-boot-test<font point-size="10"><br/>(test)</font>>]
+  "org.springframework.boot:spring-boot-test-autoconfigure:jar:test"[label=<spring-boot-test-autoconfigure<font point-size="10"><br/>(test)</font>>]
+  "com.jayway.jsonpath:json-path:jar:test"[label=<json-path<font point-size="10"><br/>(test)</font>>]
+  "jakarta.xml.bind:jakarta.xml.bind-api:jar:test"[label=<jakarta.xml.bind-api<font point-size="10"><br/>(test)</font>>]
+  "jakarta.activation:jakarta.activation-api:jar:test"[label=<jakarta.activation-api<font point-size="10"><br/>(test)</font>>]
+  "net.minidev:accessors-smart:jar:test"[label=<accessors-smart<font point-size="10"><br/>(test)</font>>]
+  "org.ow2.asm:asm:jar:test"[label=<asm<font point-size="10"><br/>(test)</font>>]
+  "net.minidev:json-smart:jar:test"[label=<json-smart<font point-size="10"><br/>(test)</font>>]
+  "org.assertj:assertj-core:jar:test"[label=<assertj-core<font point-size="10"><br/>(test)</font>>]
+  "org.awaitility:awaitility:jar:test"[label=<awaitility<font point-size="10"><br/>(test)</font>>]
+  "org.hamcrest:hamcrest:jar:test"[label=<hamcrest<font point-size="10"><br/>(test)</font>>]
+  "org.junit.jupiter:junit-jupiter-api:jar:test"[label=<junit-jupiter-api<font point-size="10"><br/>(test)</font>>]
+  "org.opentest4j:opentest4j:jar:test"[label=<opentest4j<font point-size="10"><br/>(test)</font>>]
+  "org.junit.platform:junit-platform-commons:jar:test"[label=<junit-platform-commons<font point-size="10"><br/>(test)</font>>]
+  "org.apiguardian:apiguardian-api:jar:test"[label=<apiguardian-api<font point-size="10"><br/>(test)</font>>]
+  "org.junit.jupiter:junit-jupiter:jar:test"[label=<junit-jupiter<font point-size="10"><br/>(test)</font>>]
+  "org.junit.jupiter:junit-jupiter-params:jar:test"[label=<junit-jupiter-params<font point-size="10"><br/>(test)</font>>]
+  "org.junit.jupiter:junit-jupiter-engine:jar:test"[label=<junit-jupiter-engine<font point-size="10"><br/>(test)</font>>]
+  "org.junit.platform:junit-platform-engine:jar:test"[label=<junit-platform-engine<font point-size="10"><br/>(test)</font>>]
+  "org.mockito:mockito-junit-jupiter:jar:test"[label=<mockito-junit-jupiter<font point-size="10"><br/>(test)</font>>]
+  "org.skyscreamer:jsonassert:jar:test"[label=<jsonassert<font point-size="10"><br/>(test)</font>>]
+  "com.vaadin.external.google:android-json:jar:test"[label=<android-json<font point-size="10"><br/>(test)</font>>]
+  "org.springframework:spring-test:jar:test"[label=<spring-test<font point-size="10"><br/>(test)</font>>]
+  "org.xmlunit:xmlunit-core:jar:test"[label=<xmlunit-core<font point-size="10"><br/>(test)</font>>]
+  "org.springframework.boot:spring-boot-starter-web:jar:compile"[label=<spring-boot-starter-web>]
+  "com.fasterxml.jackson.core:jackson-databind:jar:compile"[label=<jackson-databind>]
+  "com.fasterxml.jackson.core:jackson-annotations:jar:compile"[label=<jackson-annotations>]
+  "com.fasterxml.jackson.core:jackson-core:jar:compile"[label=<jackson-core>]
+  "org.springframework.boot:spring-boot-starter-json:jar:compile"[label=<spring-boot-starter-json>]
+  "com.fasterxml.jackson.datatype:jackson-datatype-jdk8:jar:compile"[label=<jackson-datatype-jdk8>]
+  "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:jar:compile"[label=<jackson-datatype-jsr310>]
+  "com.fasterxml.jackson.module:jackson-module-parameter-names:jar:compile"[label=<jackson-module-parameter-names>]
+  "org.springframework.boot:spring-boot-starter-tomcat:jar:compile"[label=<spring-boot-starter-tomcat>]
+  "org.apache.tomcat.embed:tomcat-embed-core:jar:compile"[label=<tomcat-embed-core>]
+  "org.apache.tomcat.embed:tomcat-embed-websocket:jar:compile"[label=<tomcat-embed-websocket>]
+  "org.springframework:spring-web:jar:compile"[label=<spring-web>]
+  "org.springframework:spring-webmvc:jar:compile"[label=<spring-webmvc>]
+  "microservices-practice:common-application:jar:compile"[label=<common-application>]
+  "microservices-practice:order-application:jar:compile"[label=<order-application>]
+  "microservices-practice:order-dataaccess:jar:compile"[label=<order-dataaccess>]
+  "org.springframework.boot:spring-boot-starter-aop:jar:compile"[label=<spring-boot-starter-aop>]
+  "org.aspectj:aspectjweaver:jar:compile"[label=<aspectjweaver>]
+  "org.springframework.boot:spring-boot-starter-data-jpa:jar:compile"[label=<spring-boot-starter-data-jpa>]
+  "org.springframework.boot:spring-boot-starter-jdbc:jar:compile"[label=<spring-boot-starter-jdbc>]
+  "com.zaxxer:HikariCP:jar:compile"[label=<HikariCP>]
+  "org.springframework:spring-jdbc:jar:compile"[label=<spring-jdbc>]
+  "org.hibernate.orm:hibernate-core:jar:compile"[label=<hibernate-core>]
+  "jakarta.persistence:jakarta.persistence-api:jar:compile"[label=<jakarta.persistence-api>]
+  "jakarta.transaction:jakarta.transaction-api:jar:compile"[label=<jakarta.transaction-api>]
+  "org.hibernate.common:hibernate-commons-annotations:jar:runtime"[label=<hibernate-commons-annotations<font point-size="10"><br/>(runtime)</font>>]
+  "io.smallrye:jandex:jar:runtime"[label=<jandex<font point-size="10"><br/>(runtime)</font>>]
+  "net.bytebuddy:byte-buddy:jar:runtime"[label=<byte-buddy<font point-size="10"><br/>(runtime)</font>>]
+  "jakarta.xml.bind:jakarta.xml.bind-api:jar:runtime"[label=<jakarta.xml.bind-api<font point-size="10"><br/>(runtime)</font>>]
+  "jakarta.activation:jakarta.activation-api:jar:runtime"[label=<jakarta.activation-api<font point-size="10"><br/>(runtime)</font>>]
+  "org.glassfish.jaxb:jaxb-core:jar:runtime"[label=<jaxb-core<font point-size="10"><br/>(runtime)</font>>]
+  "org.eclipse.angus:angus-activation:jar:runtime"[label=<angus-activation<font point-size="10"><br/>(runtime)</font>>]
+  "org.glassfish.jaxb:txw2:jar:runtime"[label=<txw2<font point-size="10"><br/>(runtime)</font>>]
+  "com.sun.istack:istack-commons-runtime:jar:runtime"[label=<istack-commons-runtime<font point-size="10"><br/>(runtime)</font>>]
+  "org.glassfish.jaxb:jaxb-runtime:jar:runtime"[label=<jaxb-runtime<font point-size="10"><br/>(runtime)</font>>]
+  "jakarta.inject:jakarta.inject-api:jar:runtime"[label=<jakarta.inject-api<font point-size="10"><br/>(runtime)</font>>]
+  "org.antlr:antlr4-runtime:jar:compile"[label=<antlr4-runtime>]
+  "org.springframework.data:spring-data-jpa:jar:compile"[label=<spring-data-jpa>]
+  "org.springframework.data:spring-data-commons:jar:compile"[label=<spring-data-commons>]
+  "org.springframework:spring-orm:jar:compile"[label=<spring-orm>]
+  "org.springframework:spring-aspects:jar:compile"[label=<spring-aspects>]
+  "org.postgresql:postgresql:jar:compile"[label=<postgresql>]
+  "org.checkerframework:checker-qual:jar:runtime"[label=<checker-qual<font point-size="10"><br/>(runtime)</font>>]
+  "org.apache.avro:avro:jar:compile"[label=<avro>]
+  "org.apache.commons:commons-compress:jar:compile"[label=<commons-compress>]
+  "microservices-practice:kafka-model:jar:compile"[label=<kafka-model>]
+  "microservices-practice:kafka-config-data:jar:compile"[label=<kafka-config-data>]
+  "microservices-practice:kafka-producer:jar:compile"[label=<kafka-producer>]
+  "org.springframework.kafka:spring-kafka:jar:compile"[label=<spring-kafka>]
+  "org.springframework:spring-messaging:jar:compile"[label=<spring-messaging>]
+  "org.springframework.retry:spring-retry:jar:compile"[label=<spring-retry>]
+  "org.apache.kafka:kafka-clients:jar:compile"[label=<kafka-clients>]
+  "com.github.luben:zstd-jni:jar:runtime"[label=<zstd-jni<font point-size="10"><br/>(runtime)</font>>]
+  "org.lz4:lz4-java:jar:runtime"[label=<lz4-java<font point-size="10"><br/>(runtime)</font>>]
+  "org.xerial.snappy:snappy-java:jar:runtime"[label=<snappy-java<font point-size="10"><br/>(runtime)</font>>]
+  "com.google.code.findbugs:jsr305:jar:compile"[label=<jsr305>]
+  "io.confluent:kafka-avro-serializer:jar:compile"[label=<kafka-avro-serializer>]
+  "io.confluent:kafka-schema-serializer:jar:compile"[label=<kafka-schema-serializer>]
+  "io.confluent:kafka-schema-registry-client:jar:compile"[label=<kafka-schema-registry-client>]
+  "com.google.guava:guava:jar:compile"[label=<guava>]
+  "com.google.guava:failureaccess:jar:compile"[label=<failureaccess>]
+  "com.google.guava:listenablefuture:jar:compile"[label=<listenablefuture>]
+  "org.checkerframework:checker-qual:jar:compile"[label=<checker-qual>]
+  "com.google.errorprone:error_prone_annotations:jar:compile"[label=<error_prone_annotations>]
+  "com.google.j2objc:j2objc-annotations:jar:compile"[label=<j2objc-annotations>]
+  "io.confluent:common-utils:jar:compile"[label=<common-utils>]
+  "microservices-practice:kafka-consumer:jar:compile"[label=<kafka-consumer>]
+  "com.google.code.findbugs:jsr305:jar:runtime"[label=<jsr305<font point-size="10"><br/>(runtime)</font>>]
+  "microservices-practice:order-messaging:jar:compile"[label=<order-messaging>]
+  "microservices-practice:order-container:jar:compile"[label=<order-container>]
+  "microservices-practice:customer-service:jar:compile"[label=<customer-service>]
+  "org.jboss.logging:jboss-logging:jar:runtime"[label=<jboss-logging<font point-size="10"><br/>(runtime)</font>>]
+  "com.fasterxml:classmate:jar:runtime"[label=<classmate<font point-size="10"><br/>(runtime)</font>>]
+  "microservices-practice:payment-domain:jar:compile"[label=<payment-domain>]
+  "microservices-practice:payment-domain-core:jar:compile"[label=<payment-domain-core>]
+  "microservices-practice:payment-application-service:jar:compile"[label=<payment-application-service>]
+  "microservices-practice:payment-dataaccess:jar:compile"[label=<payment-dataaccess>]
+  "microservices-practice:payment-messaging:jar:compile"[label=<payment-messaging>]
+  "microservices-practice:payment-container:jar:compile"[label=<payment-container>]
+
+  // Edge Definitions:
+  "microservices-practice:common-domain:jar:compile" -> "org.projectlombok:lombok:jar:provided"
+  "ch.qos.logback:logback-classic:jar:compile" -> "ch.qos.logback:logback-core:jar:compile"
+  "ch.qos.logback:logback-classic:jar:compile" -> "org.slf4j:slf4j-api:jar:compile"
+  "org.springframework.boot:spring-boot-starter-logging:jar:compile" -> "ch.qos.logback:logback-classic:jar:compile"
+  "org.apache.logging.log4j:log4j-to-slf4j:jar:compile" -> "org.apache.logging.log4j:log4j-api:jar:compile"
+  "org.springframework.boot:spring-boot-starter-logging:jar:compile" -> "org.apache.logging.log4j:log4j-to-slf4j:jar:compile"
+  "org.springframework.boot:spring-boot-starter-logging:jar:compile" -> "org.slf4j:jul-to-slf4j:jar:compile"
+  "microservices-practice:common-domain:jar:compile" -> "org.springframework.boot:spring-boot-starter-logging:jar:compile"
+  "microservices-practice:order-domain-core:jar:compile" -> "microservices-practice:common-domain:jar:compile"
+  "microservices-practice:order-application-service:jar:compile" -> "microservices-practice:order-domain-core:jar:compile"
+  "org.springframework:spring-context:jar:compile" -> "org.springframework:spring-aop:jar:compile"
+  "org.springframework:spring-context:jar:compile" -> "org.springframework:spring-expression:jar:compile"
+  "io.micrometer:micrometer-observation:jar:compile" -> "io.micrometer:micrometer-commons:jar:compile"
+  "org.springframework:spring-context:jar:compile" -> "io.micrometer:micrometer-observation:jar:compile"
+  "org.springframework.boot:spring-boot:jar:compile" -> "org.springframework:spring-context:jar:compile"
+  "org.springframework.boot:spring-boot-starter:jar:compile" -> "org.springframework.boot:spring-boot:jar:compile"
+  "org.springframework.boot:spring-boot-starter:jar:compile" -> "org.springframework.boot:spring-boot-autoconfigure:jar:compile"
+  "org.springframework.boot:spring-boot-starter:jar:compile" -> "jakarta.annotation:jakarta.annotation-api:jar:compile"
+  "org.springframework.boot:spring-boot-starter:jar:compile" -> "org.yaml:snakeyaml:jar:compile"
+  "org.springframework.boot:spring-boot-starter-validation:jar:compile" -> "org.springframework.boot:spring-boot-starter:jar:compile"
+  "org.springframework.boot:spring-boot-starter-validation:jar:compile" -> "org.apache.tomcat.embed:tomcat-embed-el:jar:compile"
+  "org.hibernate.validator:hibernate-validator:jar:compile" -> "jakarta.validation:jakarta.validation-api:jar:compile"
+  "org.hibernate.validator:hibernate-validator:jar:compile" -> "org.jboss.logging:jboss-logging:jar:compile"
+  "org.hibernate.validator:hibernate-validator:jar:compile" -> "com.fasterxml:classmate:jar:compile"
+  "org.springframework.boot:spring-boot-starter-validation:jar:compile" -> "org.hibernate.validator:hibernate-validator:jar:compile"
+  "microservices-practice:order-application-service:jar:compile" -> "org.springframework.boot:spring-boot-starter-validation:jar:compile"
+  "org.springframework:spring-tx:jar:compile" -> "org.springframework:spring-beans:jar:compile"
+  "org.springframework:spring-core:jar:compile" -> "org.springframework:spring-jcl:jar:compile"
+  "org.springframework:spring-tx:jar:compile" -> "org.springframework:spring-core:jar:compile"
+  "microservices-practice:order-application-service:jar:compile" -> "org.springframework:spring-tx:jar:compile"
+  "org.mockito:mockito-core:jar:test" -> "net.bytebuddy:byte-buddy:jar:test"
+  "org.mockito:mockito-core:jar:test" -> "net.bytebuddy:byte-buddy-agent:jar:test"
+  "org.mockito:mockito-core:jar:test" -> "org.objenesis:objenesis:jar:test"
+  "microservices-practice:order-application-service:jar:compile" -> "org.mockito:mockito-core:jar:test"
+  "org.springframework.boot:spring-boot-starter-test:jar:test" -> "org.springframework.boot:spring-boot-test:jar:test"
+  "org.springframework.boot:spring-boot-starter-test:jar:test" -> "org.springframework.boot:spring-boot-test-autoconfigure:jar:test"
+  "com.jayway.jsonpath:json-path:jar:test" -> "org.slf4j:slf4j-api:jar:compile"
+  "org.springframework.boot:spring-boot-starter-test:jar:test" -> "com.jayway.jsonpath:json-path:jar:test"
+  "jakarta.xml.bind:jakarta.xml.bind-api:jar:test" -> "jakarta.activation:jakarta.activation-api:jar:test"
+  "org.springframework.boot:spring-boot-starter-test:jar:test" -> "jakarta.xml.bind:jakarta.xml.bind-api:jar:test"
+  "net.minidev:accessors-smart:jar:test" -> "org.ow2.asm:asm:jar:test"
+  "net.minidev:json-smart:jar:test" -> "net.minidev:accessors-smart:jar:test"
+  "org.springframework.boot:spring-boot-starter-test:jar:test" -> "net.minidev:json-smart:jar:test"
+  "org.springframework.boot:spring-boot-starter-test:jar:test" -> "org.assertj:assertj-core:jar:test"
+  "org.springframework.boot:spring-boot-starter-test:jar:test" -> "org.awaitility:awaitility:jar:test"
+  "org.springframework.boot:spring-boot-starter-test:jar:test" -> "org.hamcrest:hamcrest:jar:test"
+  "org.junit.jupiter:junit-jupiter-api:jar:test" -> "org.opentest4j:opentest4j:jar:test"
+  "org.junit.jupiter:junit-jupiter-api:jar:test" -> "org.junit.platform:junit-platform-commons:jar:test"
+  "org.junit.jupiter:junit-jupiter-api:jar:test" -> "org.apiguardian:apiguardian-api:jar:test"
+  "org.junit.jupiter:junit-jupiter:jar:test" -> "org.junit.jupiter:junit-jupiter-api:jar:test"
+  "org.junit.jupiter:junit-jupiter:jar:test" -> "org.junit.jupiter:junit-jupiter-params:jar:test"
+  "org.junit.jupiter:junit-jupiter-engine:jar:test" -> "org.junit.platform:junit-platform-engine:jar:test"
+  "org.junit.jupiter:junit-jupiter:jar:test" -> "org.junit.jupiter:junit-jupiter-engine:jar:test"
+  "org.springframework.boot:spring-boot-starter-test:jar:test" -> "org.junit.jupiter:junit-jupiter:jar:test"
+  "org.springframework.boot:spring-boot-starter-test:jar:test" -> "org.mockito:mockito-junit-jupiter:jar:test"
+  "org.skyscreamer:jsonassert:jar:test" -> "com.vaadin.external.google:android-json:jar:test"
+  "org.springframework.boot:spring-boot-starter-test:jar:test" -> "org.skyscreamer:jsonassert:jar:test"
+  "org.springframework.boot:spring-boot-starter-test:jar:test" -> "org.springframework:spring-test:jar:test"
+  "org.springframework.boot:spring-boot-starter-test:jar:test" -> "org.xmlunit:xmlunit-core:jar:test"
+  "microservices-practice:order-application-service:jar:compile" -> "org.springframework.boot:spring-boot-starter-test:jar:test"
+  "org.springframework.boot:spring-boot-starter:jar:compile" -> "org.springframework:spring-core:jar:compile"
+  "org.springframework.boot:spring-boot-starter-web:jar:compile" -> "org.springframework.boot:spring-boot-starter:jar:compile"
+  "com.fasterxml.jackson.core:jackson-databind:jar:compile" -> "com.fasterxml.jackson.core:jackson-annotations:jar:compile"
+  "com.fasterxml.jackson.core:jackson-databind:jar:compile" -> "com.fasterxml.jackson.core:jackson-core:jar:compile"
+  "org.springframework.boot:spring-boot-starter-json:jar:compile" -> "com.fasterxml.jackson.core:jackson-databind:jar:compile"
+  "org.springframework.boot:spring-boot-starter-json:jar:compile" -> "com.fasterxml.jackson.datatype:jackson-datatype-jdk8:jar:compile"
+  "org.springframework.boot:spring-boot-starter-json:jar:compile" -> "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:jar:compile"
+  "org.springframework.boot:spring-boot-starter-json:jar:compile" -> "com.fasterxml.jackson.module:jackson-module-parameter-names:jar:compile"
+  "org.springframework.boot:spring-boot-starter-web:jar:compile" -> "org.springframework.boot:spring-boot-starter-json:jar:compile"
+  "org.springframework.boot:spring-boot-starter-tomcat:jar:compile" -> "org.apache.tomcat.embed:tomcat-embed-core:jar:compile"
+  "org.springframework.boot:spring-boot-starter-tomcat:jar:compile" -> "org.apache.tomcat.embed:tomcat-embed-websocket:jar:compile"
+  "org.springframework.boot:spring-boot-starter-web:jar:compile" -> "org.springframework.boot:spring-boot-starter-tomcat:jar:compile"
+  "org.springframework:spring-web:jar:compile" -> "org.springframework:spring-beans:jar:compile"
+  "org.springframework:spring-web:jar:compile" -> "io.micrometer:micrometer-observation:jar:compile"
+  "org.springframework.boot:spring-boot-starter-web:jar:compile" -> "org.springframework:spring-web:jar:compile"
+  "org.springframework:spring-webmvc:jar:compile" -> "org.springframework:spring-context:jar:compile"
+  "org.springframework.boot:spring-boot-starter-web:jar:compile" -> "org.springframework:spring-webmvc:jar:compile"
+  "microservices-practice:common-application:jar:compile" -> "org.springframework.boot:spring-boot-starter-web:jar:compile"
+  "microservices-practice:common-application:jar:compile" -> "org.springframework.boot:spring-boot-starter-validation:jar:compile"
+  "microservices-practice:common-application:jar:compile" -> "org.projectlombok:lombok:jar:provided"
+  "microservices-practice:common-application:jar:compile" -> "org.springframework.boot:spring-boot-starter-logging:jar:compile"
+  "microservices-practice:order-application:jar:compile" -> "microservices-practice:order-application-service:jar:compile"
+  "microservices-practice:order-application:jar:compile" -> "microservices-practice:common-application:jar:compile"
+  "microservices-practice:order-dataaccess:jar:compile" -> "microservices-practice:order-application-service:jar:compile"
+  "org.springframework.boot:spring-boot-starter-aop:jar:compile" -> "org.springframework:spring-aop:jar:compile"
+  "org.springframework.boot:spring-boot-starter-aop:jar:compile" -> "org.aspectj:aspectjweaver:jar:compile"
+  "org.springframework.boot:spring-boot-starter-data-jpa:jar:compile" -> "org.springframework.boot:spring-boot-starter-aop:jar:compile"
+  "org.springframework.boot:spring-boot-starter-jdbc:jar:compile" -> "com.zaxxer:HikariCP:jar:compile"
+  "org.springframework.boot:spring-boot-starter-jdbc:jar:compile" -> "org.springframework:spring-jdbc:jar:compile"
+  "org.springframework.boot:spring-boot-starter-data-jpa:jar:compile" -> "org.springframework.boot:spring-boot-starter-jdbc:jar:compile"
+  "org.hibernate.orm:hibernate-core:jar:compile" -> "jakarta.persistence:jakarta.persistence-api:jar:compile"
+  "org.hibernate.orm:hibernate-core:jar:compile" -> "jakarta.transaction:jakarta.transaction-api:jar:compile"
+  "org.hibernate.orm:hibernate-core:jar:compile" -> "org.jboss.logging:jboss-logging:jar:compile"
+  "org.hibernate.orm:hibernate-core:jar:compile" -> "org.hibernate.common:hibernate-commons-annotations:jar:runtime"
+  "org.hibernate.orm:hibernate-core:jar:compile" -> "io.smallrye:jandex:jar:runtime"
+  "org.hibernate.orm:hibernate-core:jar:compile" -> "com.fasterxml:classmate:jar:compile"
+  "org.hibernate.orm:hibernate-core:jar:compile" -> "net.bytebuddy:byte-buddy:jar:runtime"
+  "jakarta.xml.bind:jakarta.xml.bind-api:jar:runtime" -> "jakarta.activation:jakarta.activation-api:jar:runtime"
+  "org.hibernate.orm:hibernate-core:jar:compile" -> "jakarta.xml.bind:jakarta.xml.bind-api:jar:runtime"
+  "org.glassfish.jaxb:jaxb-core:jar:runtime" -> "org.eclipse.angus:angus-activation:jar:runtime"
+  "org.glassfish.jaxb:jaxb-core:jar:runtime" -> "org.glassfish.jaxb:txw2:jar:runtime"
+  "org.glassfish.jaxb:jaxb-core:jar:runtime" -> "com.sun.istack:istack-commons-runtime:jar:runtime"
+  "org.glassfish.jaxb:jaxb-runtime:jar:runtime" -> "org.glassfish.jaxb:jaxb-core:jar:runtime"
+  "org.hibernate.orm:hibernate-core:jar:compile" -> "org.glassfish.jaxb:jaxb-runtime:jar:runtime"
+  "org.hibernate.orm:hibernate-core:jar:compile" -> "jakarta.inject:jakarta.inject-api:jar:runtime"
+  "org.hibernate.orm:hibernate-core:jar:compile" -> "org.antlr:antlr4-runtime:jar:compile"
+  "org.springframework.boot:spring-boot-starter-data-jpa:jar:compile" -> "org.hibernate.orm:hibernate-core:jar:compile"
+  "org.springframework.data:spring-data-jpa:jar:compile" -> "org.springframework.data:spring-data-commons:jar:compile"
+  "org.springframework.data:spring-data-jpa:jar:compile" -> "org.springframework:spring-orm:jar:compile"
+  "org.springframework.data:spring-data-jpa:jar:compile" -> "org.springframework:spring-context:jar:compile"
+  "org.springframework.data:spring-data-jpa:jar:compile" -> "jakarta.annotation:jakarta.annotation-api:jar:compile"
+  "org.springframework.data:spring-data-jpa:jar:compile" -> "org.slf4j:slf4j-api:jar:compile"
+  "org.springframework.boot:spring-boot-starter-data-jpa:jar:compile" -> "org.springframework.data:spring-data-jpa:jar:compile"
+  "org.springframework.boot:spring-boot-starter-data-jpa:jar:compile" -> "org.springframework:spring-aspects:jar:compile"
+  "microservices-practice:order-dataaccess:jar:compile" -> "org.springframework.boot:spring-boot-starter-data-jpa:jar:compile"
+  "org.postgresql:postgresql:jar:compile" -> "org.checkerframework:checker-qual:jar:runtime"
+  "microservices-practice:order-dataaccess:jar:compile" -> "org.postgresql:postgresql:jar:compile"
+  "org.apache.avro:avro:jar:compile" -> "com.fasterxml.jackson.core:jackson-databind:jar:compile"
+  "org.apache.avro:avro:jar:compile" -> "org.apache.commons:commons-compress:jar:compile"
+  "org.apache.avro:avro:jar:compile" -> "org.slf4j:slf4j-api:jar:compile"
+  "microservices-practice:kafka-model:jar:compile" -> "org.apache.avro:avro:jar:compile"
+  "microservices-practice:kafka-model:jar:compile" -> "org.projectlombok:lombok:jar:provided"
+  "microservices-practice:kafka-model:jar:compile" -> "org.springframework.boot:spring-boot-starter-logging:jar:compile"
+  "org.springframework:spring-context:jar:compile" -> "org.springframework:spring-beans:jar:compile"
+  "microservices-practice:kafka-config-data:jar:compile" -> "org.springframework.boot:spring-boot-starter:jar:compile"
+  "microservices-practice:kafka-config-data:jar:compile" -> "org.projectlombok:lombok:jar:provided"
+  "microservices-practice:kafka-config-data:jar:compile" -> "org.springframework.boot:spring-boot-starter-logging:jar:compile"
+  "microservices-practice:kafka-producer:jar:compile" -> "microservices-practice:kafka-model:jar:compile"
+  "microservices-practice:kafka-producer:jar:compile" -> "microservices-practice:kafka-config-data:jar:compile"
+  "microservices-practice:kafka-producer:jar:compile" -> "microservices-practice:order-domain-core:jar:compile"
+  "org.springframework.kafka:spring-kafka:jar:compile" -> "org.springframework:spring-context:jar:compile"
+  "org.springframework.kafka:spring-kafka:jar:compile" -> "org.springframework:spring-messaging:jar:compile"
+  "org.springframework.kafka:spring-kafka:jar:compile" -> "org.springframework:spring-tx:jar:compile"
+  "org.springframework.kafka:spring-kafka:jar:compile" -> "org.springframework.retry:spring-retry:jar:compile"
+  "org.apache.kafka:kafka-clients:jar:compile" -> "com.github.luben:zstd-jni:jar:runtime"
+  "org.apache.kafka:kafka-clients:jar:compile" -> "org.lz4:lz4-java:jar:runtime"
+  "org.apache.kafka:kafka-clients:jar:compile" -> "org.xerial.snappy:snappy-java:jar:runtime"
+  "org.springframework.kafka:spring-kafka:jar:compile" -> "org.apache.kafka:kafka-clients:jar:compile"
+  "org.springframework.kafka:spring-kafka:jar:compile" -> "com.google.code.findbugs:jsr305:jar:compile"
+  "microservices-practice:kafka-producer:jar:compile" -> "org.springframework.kafka:spring-kafka:jar:compile"
+  "io.confluent:kafka-avro-serializer:jar:compile" -> "org.apache.commons:commons-compress:jar:compile"
+  "io.confluent:kafka-avro-serializer:jar:compile" -> "io.confluent:kafka-schema-serializer:jar:compile"
+  "io.confluent:kafka-avro-serializer:jar:compile" -> "io.confluent:kafka-schema-registry-client:jar:compile"
+  "com.google.guava:guava:jar:compile" -> "com.google.guava:failureaccess:jar:compile"
+  "com.google.guava:guava:jar:compile" -> "com.google.guava:listenablefuture:jar:compile"
+  "com.google.guava:guava:jar:compile" -> "org.checkerframework:checker-qual:jar:compile"
+  "com.google.guava:guava:jar:compile" -> "com.google.errorprone:error_prone_annotations:jar:compile"
+  "com.google.guava:guava:jar:compile" -> "com.google.j2objc:j2objc-annotations:jar:compile"
+  "io.confluent:kafka-avro-serializer:jar:compile" -> "com.google.guava:guava:jar:compile"
+  "io.confluent:kafka-avro-serializer:jar:compile" -> "io.confluent:common-utils:jar:compile"
+  "microservices-practice:kafka-producer:jar:compile" -> "io.confluent:kafka-avro-serializer:jar:compile"
+  "microservices-practice:kafka-consumer:jar:compile" -> "microservices-practice:kafka-config-data:jar:compile"
+  "org.springframework.kafka:spring-kafka:jar:compile" -> "com.google.code.findbugs:jsr305:jar:runtime"
+  "microservices-practice:kafka-consumer:jar:compile" -> "org.springframework.kafka:spring-kafka:jar:compile"
+  "microservices-practice:kafka-consumer:jar:compile" -> "org.apache.avro:avro:jar:compile"
+  "microservices-practice:order-messaging:jar:compile" -> "microservices-practice:order-application-service:jar:compile"
+  "microservices-practice:order-messaging:jar:compile" -> "microservices-practice:kafka-producer:jar:compile"
+  "microservices-practice:order-messaging:jar:compile" -> "microservices-practice:kafka-consumer:jar:compile"
+  "microservices-practice:order-container:jar:compile" -> "microservices-practice:order-application:jar:compile"
+  "org.postgresql:postgresql:jar:compile" -> "org.checkerframework:checker-qual:jar:compile"
+  "microservices-practice:order-container:jar:compile" -> "microservices-practice:order-dataaccess:jar:compile"
+  "microservices-practice:order-container:jar:compile" -> "microservices-practice:order-messaging:jar:compile"
+  "microservices-practice:customer-service:jar:compile" -> "org.springframework.boot:spring-boot-starter:jar:compile"
+  "org.hibernate.orm:hibernate-core:jar:compile" -> "org.jboss.logging:jboss-logging:jar:runtime"
+  "org.hibernate.orm:hibernate-core:jar:compile" -> "com.fasterxml:classmate:jar:runtime"
+  "org.springframework.data:spring-data-jpa:jar:compile" -> "org.springframework:spring-tx:jar:compile"
+  "microservices-practice:customer-service:jar:compile" -> "org.springframework.boot:spring-boot-starter-data-jpa:jar:compile"
+  "microservices-practice:customer-service:jar:compile" -> "org.postgresql:postgresql:jar:compile"
+  "microservices-practice:customer-service:jar:compile" -> "org.projectlombok:lombok:jar:provided"
+  "microservices-practice:customer-service:jar:compile" -> "org.springframework.boot:spring-boot-starter-logging:jar:compile"
+  "microservices-practice:payment-domain:jar:compile" -> "org.projectlombok:lombok:jar:provided"
+  "microservices-practice:payment-domain:jar:compile" -> "org.springframework.boot:spring-boot-starter-logging:jar:compile"
+  "microservices-practice:payment-domain-core:jar:compile" -> "microservices-practice:common-domain:jar:compile"
+  "microservices-practice:payment-application-service:jar:compile" -> "microservices-practice:payment-domain-core:jar:compile"
+  "microservices-practice:payment-application-service:jar:compile" -> "org.springframework.boot:spring-boot-starter-validation:jar:compile"
+  "microservices-practice:payment-application-service:jar:compile" -> "org.springframework:spring-tx:jar:compile"
+  "microservices-practice:payment-dataaccess:jar:compile" -> "microservices-practice:payment-application-service:jar:compile"
+  "microservices-practice:payment-dataaccess:jar:compile" -> "org.springframework.boot:spring-boot-starter-data-jpa:jar:compile"
+  "microservices-practice:payment-dataaccess:jar:compile" -> "org.postgresql:postgresql:jar:compile"
+  "microservices-practice:payment-messaging:jar:compile" -> "microservices-practice:payment-application-service:jar:compile"
+  "microservices-practice:payment-messaging:jar:compile" -> "microservices-practice:kafka-producer:jar:compile"
+  "microservices-practice:payment-messaging:jar:compile" -> "microservices-practice:kafka-consumer:jar:compile"
+  "microservices-practice:payment-container:jar:compile" -> "microservices-practice:payment-dataaccess:jar:compile"
+  "microservices-practice:payment-container:jar:compile" -> "microservices-practice:payment-messaging:jar:compile"
+}
