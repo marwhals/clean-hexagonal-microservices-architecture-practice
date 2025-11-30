@@ -1,4 +1,4 @@
-package service.dataaccess.restaurant.entity;
+package dataaccess.restaurant.entity;
 
 import lombok.*;
 

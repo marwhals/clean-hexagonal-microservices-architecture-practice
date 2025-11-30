@@ -5,9 +5,10 @@ import core.domain.entity.Restaurant;
 import core.domain.valueobject.Money;
 import core.domain.valueobject.ProductId;
 import core.domain.valueobject.RestaurantId;
+import dataaccess.restaurant.entity.RestaurantEntity;
+import dataaccess.restaurant.exception.RestaurantDataAccessException;
 import org.springframework.stereotype.Component;
-import service.dataaccess.restaurant.entity.RestaurantEntity;
-import service.dataaccess.restaurant.exception.RestaurantDataAccessException;
+
 
 import java.util.List;
 import java.util.UUID;

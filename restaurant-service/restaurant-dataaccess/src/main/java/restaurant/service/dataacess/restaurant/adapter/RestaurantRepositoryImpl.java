@@ -1,11 +1,11 @@
-package service.dataaccess.restaurant.adapter;
+package restaurant.service.dataacess.restaurant.adapter;
 
-import core.domain.entity.Restaurant;
 import dataaccess.restaurant.entity.RestaurantEntity;
 import dataaccess.restaurant.repository.RestaurantJpaRepository;
 import org.springframework.stereotype.Component;
-import service.dataaccess.restaurant.mapper.RestaurantDataAccessMapper;
-import service.domain.ports.output.repository.RestaurantRepository;
+import payment.service.domain.ports.output.repository.RestaurantRepository;
+import restaurant.service.dataacess.restaurant.mapper.RestaurantDataAccessMapper;
+import restaurant.service.domain.entity.Restaurant;
 
 import java.util.List;
 import java.util.Optional;
@@ -25,13 +25,12 @@ public class RestaurantRepositoryImpl implements RestaurantRepository {
 
     @Override
     public Optional<Restaurant> findRestaurantInformation(Restaurant restaurant) {
-        List<UUID> restaurantProduct =
+        List<UUID> restaurantProducts =
                 restaurantDataAccessMapper.restaurantToRestaurantProducts(restaurant);
         Optional<List<RestaurantEntity>> restaurantEntities = restaurantJpaRepository
-                .findByRestaurantIdAndProductIdIn(restaurant.getId().getValue(), restaurantProduct);
-
+                .findByRestaurantIdAndProductIdIn(restaurant.getId().getValue(),
+                        restaurantProducts);
         return restaurantEntities.map(restaurantDataAccessMapper::restaurantEntityToRestaurant);
     }
-
 
 }

@@ -1,4 +1,4 @@
-package service.dataaccess.restaurant.exception;
+package dataaccess.restaurant.exception;
 
 public class RestaurantDataAccessException extends RuntimeException {
 

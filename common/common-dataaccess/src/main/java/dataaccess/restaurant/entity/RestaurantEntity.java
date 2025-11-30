@@ -1,4 +1,4 @@
-package service.dataaccess.restaurant.entity;
+package dataaccess.restaurant.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -22,14 +22,13 @@ public class RestaurantEntity {
 
     @Id
     private UUID restaurantId;
-
     @Id
     private UUID productId;
-
     private String restaurantName;
     private Boolean restaurantActive;
     private String productName;
     private BigDecimal productPrice;
+    private Boolean productAvailable;
 
     @Override
     public boolean equals(Object o) {
