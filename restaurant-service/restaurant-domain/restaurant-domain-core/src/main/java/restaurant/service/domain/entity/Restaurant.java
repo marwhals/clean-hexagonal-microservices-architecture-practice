@@ -69,6 +69,10 @@ public class Restaurant extends AggregateRoot<RestaurantId> {
         return orderDetail;
     }
 
+    public static Builder builder() {
+        return new Builder();
+    }
+
     public static final class Builder {
         private RestaurantId restaurantId;
         private OrderApproval orderApproval;
@@ -76,10 +80,6 @@ public class Restaurant extends AggregateRoot<RestaurantId> {
         private OrderDetail orderDetail;
 
         private Builder() {
-        }
-
-        public static Builder builder() {
-            return new Builder();
         }
 
         public Builder restaurantId(RestaurantId val) {

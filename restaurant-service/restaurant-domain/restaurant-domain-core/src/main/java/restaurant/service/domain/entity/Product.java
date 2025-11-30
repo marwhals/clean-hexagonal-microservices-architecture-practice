@@ -41,6 +41,10 @@ public class Product extends BaseEntity<ProductId> {
         return available;
     }
 
+    public static Builder builder() {
+        return new Builder();
+    }
+
     public static final class Builder {
         private ProductId productId;
         private String name;
@@ -49,10 +53,6 @@ public class Product extends BaseEntity<ProductId> {
         private boolean available;
 
         private Builder() {
-        }
-
-        public static Builder builder() {
-            return new Builder();
         }
 
         public Builder productId(ProductId val) {

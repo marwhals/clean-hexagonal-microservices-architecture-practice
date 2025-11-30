@@ -20,7 +20,7 @@ public class RestaurantDomainServiceImpl implements RestaurantDomainService {
     public OrderApprovalEvent validateOrder(Restaurant restaurant,
                                             List<String> failureMessages,
                                             DomainEventPublisher<OrderApprovedEvent> orderApprovedEventDomainEventPublisher,
-                                            DomainEventPublisher<OrderRejectedEvent> orderRejectedEventDomainEventPublisher) {
+                                            OrderRejectedMessagePublisher orderRejectedEventDomainEventPublisher) {
         restaurant.validateOrder(failureMessages);
         log.info("Validating order with id: {}", restaurant.getOrderDetail().getId().getValue());
 

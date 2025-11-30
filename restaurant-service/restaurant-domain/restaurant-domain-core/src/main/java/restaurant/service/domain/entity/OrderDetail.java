@@ -20,6 +20,10 @@ public class OrderDetail extends BaseEntity<OrderId> {
         products = builder.products;
     }
 
+    public static Builder builder() {
+        return new Builder();
+    }
+
 
     public OrderStatus getOrderStatus() {
         return orderStatus;
@@ -40,10 +44,6 @@ public class OrderDetail extends BaseEntity<OrderId> {
         private List<Product> products;
 
         private Builder() {
-        }
-
-        public static Builder builder() {
-            return new Builder();
         }
 
         public Builder orderId(OrderId val) {
