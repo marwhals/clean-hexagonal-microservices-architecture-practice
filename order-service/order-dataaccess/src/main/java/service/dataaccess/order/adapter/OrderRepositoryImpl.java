@@ -1,6 +1,7 @@
 package service.dataaccess.order.adapter;
 
 import core.domain.entity.Order;
+import core.domain.valueobject.OrderId;
 import core.domain.valueobject.TrackingId;
 import org.springframework.stereotype.Component;
 import service.dataaccess.order.mapper.OrderDataAccessMapper;
@@ -24,6 +25,11 @@ public class OrderRepositoryImpl implements OrderRepository {
     public Order save(Order order) {
         return orderDataAccessMapper.orderEntityToOrder(orderJpaRepository
                 .save(orderDataAccessMapper.orderToOrderEntity(order)));
+    }
+
+    @Override
+    public Optional<Order> findById(OrderId orderId) {
+        return orderJpaRepository.findById(orderId.getValue()).map(orderDataAccessMapper::orderEntityToOrder);
     }
 
     @Override

@@ -1,6 +1,5 @@
 package service.domain;
 
-import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
@@ -11,7 +10,8 @@ import service.domain.ports.input.service.message.listener.payment.PaymentRespon
 @Validated
 @Service
 public class PaymentResponseMessageListenerImpl implements PaymentResponseMessageListener {
-    @Override
+
+     @Override
     public void paymentCompleted(PaymentResponse paymentResponse) {
 
     }
