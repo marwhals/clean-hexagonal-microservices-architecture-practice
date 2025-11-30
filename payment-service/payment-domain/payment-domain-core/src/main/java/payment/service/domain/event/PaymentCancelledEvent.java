@@ -3,11 +3,12 @@ package payment.service.domain.event;
 import payment.service.domain.entity.Payment;
 
 import java.time.ZonedDateTime;
+import java.util.Collections;
 import java.util.List;
 
 public class PaymentCancelledEvent extends PaymentEvent {
 
-    public PaymentCancelledEvent(Payment payment, ZonedDateTime createdAt, List<String> failureMessages) {
-        super(payment, createdAt, failureMessages);
+    public PaymentCancelledEvent(Payment payment, ZonedDateTime createdAt) {
+        super(payment, createdAt, Collections.emptyList());
     }
 }
