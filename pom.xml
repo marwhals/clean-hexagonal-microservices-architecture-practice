@@ -44,6 +44,11 @@
         <dependencies>
             <dependency>
                 <groupId>microservices-practice</groupId>
+                <artifactId>outbox</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>microservices-practice</groupId>
                 <artifactId>saga</artifactId>
                 <version>${project.version}</version>
             </dependency>
