@@ -1,0 +1,13 @@
+package service.domain.ports.output.message.publisher.restaurantapproval;
+
+import service.domain.outbox.model.approval.OrderApprovalOutboxMessage;
+import system.outbox.OutboxStatus;
+
+import java.util.function.BiConsumer;
+
+public interface RestaurantApprovalRequestMessagePublisher {
+
+    void publish(OrderApprovalOutboxMessage orderApprovalOutboxMessage,
+                 BiConsumer<OrderApprovalOutboxMessage, OutboxStatus> outboxCallback);
+
+}

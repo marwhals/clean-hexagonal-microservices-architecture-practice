@@ -8,7 +8,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import service.domain.dto.message.RestaurantApprovalResponse;
-import service.domain.ports.output.message.publisher.payment.OrderCancelledPaymentRequestMessagePublisher;
 import system.saga.SagaStep;
 
 @Slf4j

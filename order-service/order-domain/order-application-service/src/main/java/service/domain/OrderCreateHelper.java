@@ -14,7 +14,6 @@ import service.domain.mapper.OrderDataMapper;
 import service.domain.ports.output.repository.CustomerRepository;
 import service.domain.ports.output.repository.OrderRepository;
 import service.domain.ports.output.repository.RestaurantRepository;
-import service.domain.ports.output.message.publisher.payment.OrderCreatedPaymentRequestMessagePublisher;
 
 import java.util.Optional;
 import java.util.UUID;

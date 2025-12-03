@@ -3,9 +3,11 @@ package service.domain;
 import core.domain.entity.Order;
 import core.domain.excecption.OrderNotFoundException;
 import core.domain.valueobject.OrderId;
+import core.domain.valueobject.OrderStatus;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import service.domain.ports.output.repository.OrderRepository;
+import system.saga.SagaStatus;
 
 import java.util.Optional;
 import java.util.UUID;
@@ -33,4 +35,18 @@ public class OrderSagaHelper {
         orderRepository.save(order);
     }
 
+    SagaStatus orderStatusToSagaStatus(OrderStatus orderStatus) {
+        switch (orderStatus) {
+            case PAID:
+                return SagaStatus.PROCESSING;
+            case APPROVED:
+                return SagaStatus.SUCCEEDED;
+            case CANCELLING:
+                return SagaStatus.COMPENSATING;
+            case CANCELLED:
+                return SagaStatus.COMPENSATED;
+            default:
+                return SagaStatus.STARTED;
+        }
+    }
 }

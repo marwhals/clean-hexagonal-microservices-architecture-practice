@@ -1,6 +1,7 @@
 package order.service.messaging.publisher.kafka;
 
 import core.domain.event.OrderPaidEvent;
+import core.domain.event.publisher.DomainEventPublisher;
 import kafka.order.avro.model.RestaurantApprovalRequestAvroModel;
 import kafka.producer.KafkaMessageHelper;
 import kafka.producer.service.KafkaProducer;
@@ -8,11 +9,10 @@ import lombok.extern.slf4j.Slf4j;
 import order.service.messaging.mapper.OrderMessagingDataMapper;
 import org.springframework.stereotype.Component;
 import service.domain.config.OrderServiceConfigData;
-import service.domain.ports.output.message.publisher.restaurantapproval.OrderPaidRestaurantRequestMessagePublisher;
 
 @Slf4j
 @Component
-public class PayOrderKafkaMessagePublisher implements OrderPaidRestaurantRequestMessagePublisher {
+public class PayOrderKafkaMessagePublisher implements DomainEventPublisher<OrderPaidEvent> {
 
     private final OrderMessagingDataMapper orderMessagingDataMapper;
     private final OrderServiceConfigData orderServiceConfigData;

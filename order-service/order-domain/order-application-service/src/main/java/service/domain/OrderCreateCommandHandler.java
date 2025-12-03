@@ -6,7 +6,6 @@ import org.springframework.stereotype.Component;
 import service.domain.dto.create.CreateOrderCommand;
 import service.domain.dto.create.CreateOrderResponse;
 import service.domain.mapper.OrderDataMapper;
-import service.domain.ports.output.message.publisher.payment.OrderCreatedPaymentRequestMessagePublisher;
 
 @Slf4j
 @Component
