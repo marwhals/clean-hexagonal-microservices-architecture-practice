@@ -4,12 +4,17 @@ import core.domain.entity.Order;
 import core.domain.entity.OrderItem;
 import core.domain.entity.Product;
 import core.domain.entity.Restaurant;
+import core.domain.event.OrderCreatedEvent;
+import core.domain.event.OrderPaidEvent;
 import core.domain.valueobject.*;
 import org.springframework.stereotype.Component;
 import service.domain.dto.create.CreateOrderCommand;
 import service.domain.dto.create.CreateOrderResponse;
 import service.domain.dto.create.OrderAddress;
 import service.domain.dto.track.TrackOrderResponse;
+import service.domain.outbox.model.approval.OrderApprovalEventPayload;
+import service.domain.outbox.model.approval.OrderApprovalEventProduct;
+import service.domain.outbox.model.payment.OrderPaymentEventPayload;
 
 import java.util.List;
 import java.util.UUID;
@@ -34,6 +39,16 @@ public class OrderDataMapper {
                 .deliveryAddress(orderAddressToStreetAddress(createOrderCommand.getAddress()))
                 .price(new Money(createOrderCommand.getPrice()))
                 .items(orderItemsToOrderItemEntities(createOrderCommand.getItems()))
+                .build();
+    }
+
+    public OrderPaymentEventPayload orderCreatedEventToOrderPaymentEventPayload(OrderCreatedEvent orderCreatedEvent) {
+        return OrderPaymentEventPayload.builder()
+                .customerId(orderCreatedEvent.getOrder().getCustomerId().getValue().toString())
+                .orderId(orderCreatedEvent.getOrder().getId().getValue().toString())
+                .price(orderCreatedEvent.getOrder().getPrice().getAmount())
+                .createdAt(orderCreatedEvent.getCreatedAt())
+                .paymentOrderStatus(PaymentOrderStatus.PENDING.name())
                 .build();
     }
 
