@@ -4,6 +4,7 @@ import core.domain.entity.Order;
 import core.domain.entity.OrderItem;
 import core.domain.entity.Product;
 import core.domain.entity.Restaurant;
+import core.domain.event.OrderCancelledEvent;
 import core.domain.event.OrderCreatedEvent;
 import core.domain.event.OrderPaidEvent;
 import core.domain.valueobject.*;
@@ -49,6 +50,17 @@ public class OrderDataMapper {
                 .price(orderCreatedEvent.getOrder().getPrice().getAmount())
                 .createdAt(orderCreatedEvent.getCreatedAt())
                 .paymentOrderStatus(PaymentOrderStatus.PENDING.name())
+                .build();
+    }
+
+    public OrderPaymentEventPayload orderCancelledEventToOrderPaymentEventPayload(OrderCancelledEvent
+                                                                                          orderCancelledEvent) {
+        return OrderPaymentEventPayload.builder()
+                .customerId(orderCancelledEvent.getOrder().getCustomerId().getValue().toString())
+                .orderId(orderCancelledEvent.getOrder().getId().getValue().toString())
+                .price(orderCancelledEvent.getOrder().getPrice().getAmount())
+                .createdAt(orderCancelledEvent.getCreatedAt())
+                .paymentOrderStatus(PaymentOrderStatus.CANCELLED.name())
                 .build();
     }
 
