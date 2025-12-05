@@ -11,38 +11,18 @@ import payment.service.domain.ports.input.message.listener.PaymentRequestMessage
 public class PaymentRequestMessageListenerImpl implements PaymentRequestMessageListener {
 
     private final PaymentRequestHelper paymentRequestHelper;
-    private final PaymentCompletedMessagePublisher paymentCompletedMessagePublisher;
-    private final PaymentCancelledMessagePublisher paymentCancelledMessagePublisher;
-    private final PaymentFailedMessagePublisher paymentFailedMessagePublisher;
 
-
-    public PaymentRequestMessageListenerImpl(PaymentRequestHelper paymentRequestHelper,
-                                             PaymentCompletedMessagePublisher paymentCompletedEventDomainEventPublisher,
-                                             PaymentCancelledMessagePublisher paymentCancelledEventDomainEventPublisher,
-                                             PaymentFailedMessagePublisher paymentFailedEventDomainEventPublisher) {
+    public PaymentRequestMessageListenerImpl(PaymentRequestHelper paymentRequestHelper) {
         this.paymentRequestHelper = paymentRequestHelper;
-        this.paymentCompletedMessagePublisher = paymentCompletedEventDomainEventPublisher;
-        this.paymentCancelledMessagePublisher = paymentCancelledEventDomainEventPublisher;
-        this.paymentFailedMessagePublisher = paymentFailedEventDomainEventPublisher;
     }
 
     @Override
     public void completePayment(PaymentRequest paymentRequest) {
-        PaymentEvent paymentEvent = paymentRequestHelper.persistPayment(paymentRequest);
-        fireEvent(paymentEvent);
-    }
-
-    private void fireEvent(PaymentEvent paymentEvent) {
-        log.info("Publishing payment event with payment id: {} and order id: {}",
-                paymentEvent.getPayment().getId().getValue(),
-                paymentEvent.getPayment().getOrderId().getValue());
-
-        paymentEvent.fire();
+        paymentRequestHelper.persistPayment(paymentRequest);
     }
 
     @Override
     public void cancelPayment(PaymentRequest paymentRequest) {
-        PaymentEvent paymentEvent = paymentRequestHelper.persistCancelPayment(paymentRequest);
-        fireEvent(paymentEvent);
+        paymentRequestHelper.persistCancelPayment(paymentRequest);
     }
 }
