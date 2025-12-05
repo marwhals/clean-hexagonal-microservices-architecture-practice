@@ -11,9 +11,6 @@
 
     <artifactId>order-domain-core</artifactId>
 
-    <properties>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>microservices-practice</groupId>

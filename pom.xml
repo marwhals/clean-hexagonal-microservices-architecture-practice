@@ -10,11 +10,6 @@
         <module>infrastructure</module>
         <module>customer-service</module>
         <module>payment-service</module>
-        <module>payment-service/payment-container</module>
-        <module>payment-service/payment-dataaccess</module>
-        <module>payment-service/payment-messaging</module>
-        <module>payment-service/payment-domain/payment-domain-core</module>
-        <module>payment-service/payment-domain/payment-application-service</module>
         <module>restaurant-service</module>
     </modules>
 
@@ -54,6 +49,31 @@
             </dependency>
             <dependency>
                 <groupId>microservices-practice</groupId>
+                <artifactId>customer-domain-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>microservices-practice</groupId>
+                <artifactId>customer-application-service</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>microservices-practice</groupId>
+                <artifactId>customer-application</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>microservices-practice</groupId>
+                <artifactId>customer-dataaccess</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>microservices-practice</groupId>
+                <artifactId>customer-messaging</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>microservices-practice</groupId>
                 <artifactId>order-domain-core</artifactId>
                 <version>${project.version}</version>
             </dependency>
@@ -70,11 +90,6 @@
             <dependency>
                 <groupId>microservices-practice</groupId>
                 <artifactId>order-dataaccess</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>microservices-practice</groupId>
-                <artifactId>common-application</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
@@ -100,6 +115,11 @@
             <dependency>
                 <groupId>microservices-practice</groupId>
                 <artifactId>payment-messaging</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>microservices-practice</groupId>
+                <artifactId>common-application</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
