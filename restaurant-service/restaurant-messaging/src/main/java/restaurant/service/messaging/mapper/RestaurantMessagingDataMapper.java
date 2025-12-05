@@ -7,6 +7,7 @@ import kafka.order.avro.model.RestaurantApprovalRequestAvroModel;
 import kafka.order.avro.model.RestaurantApprovalResponseAvroModel;
 import org.springframework.stereotype.Component;
 import payment.service.domain.dto.RestaurantApprovalRequest;
+import payment.service.domain.outbox.model.OrderEventPayload;
 import restaurant.service.domain.entity.Product;
 import restaurant.service.domain.event.OrderApprovedEvent;
 import restaurant.service.domain.event.OrderRejectedEvent;
@@ -63,6 +64,19 @@ public class RestaurantMessagingDataMapper {
                         .collect(Collectors.toList()))
                 .price(restaurantApprovalRequestAvroModel.getPrice())
                 .createdAt(restaurantApprovalRequestAvroModel.getCreatedAt())
+                .build();
+    }
+
+    public RestaurantApprovalResponseAvroModel
+    orderEventPayloadToRestaurantApprovalResponseAvroModel(String sagaId, OrderEventPayload orderEventPayload) {
+        return RestaurantApprovalResponseAvroModel.newBuilder()
+                .setId(UUID.randomUUID().toString())
+                .setSagaId(sagaId)
+                .setOrderId(orderEventPayload.getOrderId())
+                .setRestaurantId(orderEventPayload.getRestaurantId())
+                .setCreatedAt(orderEventPayload.getCreatedAt().toInstant())
+                .setOrderApprovalStatus(OrderApprovalStatus.valueOf(orderEventPayload.getOrderApprovalStatus()))
+                .setFailureMessages(orderEventPayload.getFailureMessages())
                 .build();
     }
 }

@@ -6,9 +6,11 @@ import core.domain.valueobject.OrderStatus;
 import core.domain.valueobject.RestaurantId;
 import org.springframework.stereotype.Component;
 import payment.service.domain.dto.RestaurantApprovalRequest;
+import payment.service.domain.outbox.model.OrderEventPayload;
 import restaurant.service.domain.entity.Restaurant;
 import restaurant.service.domain.entity.OrderDetail;
 import restaurant.service.domain.entity.Product;
+import restaurant.service.domain.event.OrderApprovalEvent;
 
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -30,6 +32,17 @@ public class RestaurantDataMapper {
                         .totalAmount(new Money(restaurantApprovalRequest.getPrice()))
                         .orderStatus(OrderStatus.valueOf(restaurantApprovalRequest.getRestaurantOrderStatus().name()))
                         .build())
+                .build();
+    }
+
+    public OrderEventPayload
+    orderApprovalEventToOrderEventPayload(OrderApprovalEvent orderApprovalEvent) {
+        return OrderEventPayload.builder()
+                .orderId(orderApprovalEvent.getOrderApproval().getOrderId().getValue().toString())
+                .restaurantId(orderApprovalEvent.getRestaurantId().getValue().toString())
+                .orderApprovalStatus(orderApprovalEvent.getOrderApproval().getApprovalStatus().name())
+                .createdAt(orderApprovalEvent.getCreatedAt())
+                .failureMessages(orderApprovalEvent.getFailureMessages())
                 .build();
     }
 }
