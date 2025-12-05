@@ -25,18 +25,15 @@ public class OrderPaymentEventKafkaPublisher implements PaymentRequestMessagePub
     private final KafkaProducer<String, PaymentRequestAvroModel> kafkaProducer;
     private final OrderServiceConfigData orderServiceConfigData;
     private final KafkaMessageHelper kafkaMessageHelper;
-    private final ObjectMapper objectMapper;
 
     public OrderPaymentEventKafkaPublisher(OrderMessagingDataMapper orderMessagingDataMapper,
                                            KafkaProducer<String, PaymentRequestAvroModel> kafkaProducer,
                                            OrderServiceConfigData orderServiceConfigData,
-                                           KafkaMessageHelper kafkaMessageHelper,
-                                           ObjectMapper objectMapper) {
+                                           KafkaMessageHelper kafkaMessageHelper) {
         this.orderMessagingDataMapper = orderMessagingDataMapper;
         this.kafkaProducer = kafkaProducer;
         this.orderServiceConfigData = orderServiceConfigData;
         this.kafkaMessageHelper = kafkaMessageHelper;
-        this.objectMapper = objectMapper;
     }
 
     @Override
@@ -45,8 +42,8 @@ public class OrderPaymentEventKafkaPublisher implements PaymentRequestMessagePub
                                 outboxCallback) {
 
         OrderPaymentEventPayload orderPaymentEventPayload =
-                getOrderPaymentEventPayload(orderPaymentOutboxMessage.getPayload());
-
+                kafkaMessageHelper.getOrderEventPayload(orderPaymentOutboxMessage.getPayload(),
+                        OrderPaymentEventPayload.class);
 
         String sagaId = orderPaymentOutboxMessage.getSagaId().toString();
 
@@ -76,14 +73,5 @@ public class OrderPaymentEventKafkaPublisher implements PaymentRequestMessagePub
                     orderPaymentEventPayload.getOrderId(), sagaId, e.getMessage());
         }
 
-    }
-
-    private OrderPaymentEventPayload getOrderPaymentEventPayload(String payload) {
-        try {
-            return objectMapper.readValue(payload, OrderPaymentEventPayload.class);
-        } catch (JsonProcessingException e) {
-            log.error("Could not read OrderPaymentEventPayload object!", e);
-            throw new OrderDomainException("Could not read OrderPaymentEventPayload object!");
-        }
     }
 }
