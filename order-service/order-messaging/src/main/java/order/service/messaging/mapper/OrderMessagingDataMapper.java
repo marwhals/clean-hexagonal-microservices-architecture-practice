@@ -8,6 +8,7 @@ import kafka.order.avro.model.*;
 import org.springframework.stereotype.Component;
 import service.domain.dto.message.PaymentResponse;
 import service.domain.dto.message.RestaurantApprovalResponse;
+import service.domain.outbox.model.payment.OrderPaymentEventPayload;
 
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -90,6 +91,19 @@ public class OrderMessagingDataMapper {
                 .orderApprovalStatus(core.domain.valueobject.OrderApprovalStatus.valueOf(
                         restaurantApprovalResponseAvroModel.getOrderApprovalStatus().name()))
                 .failureMessages(restaurantApprovalResponseAvroModel.getFailureMessages())
+                .build();
+    }
+
+    public PaymentRequestAvroModel orderPaymentEventToPaymentRequestAvroModel(String sagaId, OrderPaymentEventPayload
+            orderPaymentEventPayload) {
+        return PaymentRequestAvroModel.newBuilder()
+                .setId(UUID.randomUUID().toString())
+                .setSagaId(sagaId)
+                .setCustomerId(orderPaymentEventPayload.getCustomerId())
+                .setOrderId(orderPaymentEventPayload.getOrderId())
+                .setPrice(orderPaymentEventPayload.getPrice())
+                .setCreatedAt(orderPaymentEventPayload.getCreatedAt().toInstant())
+                .setPaymentOrderStatus(PaymentOrderStatus.valueOf(orderPaymentEventPayload.getPaymentOrderStatus()))
                 .build();
     }
 
