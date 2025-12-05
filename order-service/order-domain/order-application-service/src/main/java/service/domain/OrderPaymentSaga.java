@@ -2,7 +2,6 @@ package service.domain;
 
 import core.domain.OrderDomainService;
 import core.domain.entity.Order;
-import core.domain.event.EmptyEvent;
 import core.domain.event.OrderPaidEvent;
 import core.domain.excecption.OrderDomainException;
 import core.domain.valueobject.OrderStatus;
