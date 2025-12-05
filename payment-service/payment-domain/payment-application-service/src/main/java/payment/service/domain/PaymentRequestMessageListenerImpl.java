@@ -3,14 +3,8 @@ package payment.service.domain;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import payment.service.domain.dto.PaymentRequest;
-import payment.service.domain.event.PaymentCancelledEvent;
-import payment.service.domain.event.PaymentCompletedEvent;
 import payment.service.domain.event.PaymentEvent;
-import payment.service.domain.event.PaymentFailedEvent;
 import payment.service.domain.ports.input.message.listener.PaymentRequestMessageListener;
-import payment.service.domain.ports.output.message.publisher.PaymentCancelledMessagePublisher;
-import payment.service.domain.ports.output.message.publisher.PaymentCompletedMessagePublisher;
-import payment.service.domain.ports.output.message.publisher.PaymentFailedMessagePublisher;
 
 @Slf4j
 @Service
