@@ -11,4 +11,19 @@
 
     <artifactId>customer-messaging</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>microservices-practice</groupId>
+            <artifactId>customer-application-service</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>microservices-practice</groupId>
+            <artifactId>kafka-producer</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>microservices-practice</groupId>
+            <artifactId>kafka-model</artifactId>
+        </dependency>
+    </dependencies>
+
 </project>

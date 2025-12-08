@@ -1,4 +1,4 @@
-package system.customer.service;
+package customer.service;
 
 import customer.service.domain.CustomerDomainService;
 import customer.service.domain.CustomerDomainServiceImpl;
