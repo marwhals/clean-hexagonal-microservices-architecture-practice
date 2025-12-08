@@ -1,4 +1,4 @@
-package system.customer.service-practice;
+package system.customer.service;
 
 public class Main {
     public static void main(String[] args) {

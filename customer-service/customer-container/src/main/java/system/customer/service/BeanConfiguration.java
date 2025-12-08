@@ -1,5 +1,7 @@
 package system.customer.service;
 
+import customer.service.domain.CustomerDomainService;
+import customer.service.domain.CustomerDomainServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
