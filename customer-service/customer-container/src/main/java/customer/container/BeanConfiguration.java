@@ -1,4 +1,4 @@
-package customer.service;
+package customer.container;
 
 import customer.service.domain.CustomerDomainService;
 import customer.service.domain.CustomerDomainServiceImpl;
