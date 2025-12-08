@@ -1,9 +1,6 @@
 package service.domain.mapper;
 
-import core.domain.entity.Order;
-import core.domain.entity.OrderItem;
-import core.domain.entity.Product;
-import core.domain.entity.Restaurant;
+import core.domain.entity.*;
 import core.domain.event.OrderCancelledEvent;
 import core.domain.event.OrderCreatedEvent;
 import core.domain.event.OrderPaidEvent;
@@ -12,6 +9,7 @@ import org.springframework.stereotype.Component;
 import service.domain.dto.create.CreateOrderCommand;
 import service.domain.dto.create.CreateOrderResponse;
 import service.domain.dto.create.OrderAddress;
+import service.domain.dto.message.CustomerModel;
 import service.domain.dto.track.TrackOrderResponse;
 import service.domain.outbox.model.approval.OrderApprovalEventPayload;
 import service.domain.outbox.model.approval.OrderApprovalEventProduct;
@@ -23,6 +21,14 @@ import java.util.stream.Collectors;
 
 @Component
 public class OrderDataMapper {
+
+
+    public Customer customerModelToCustomer(CustomerModel customerModel) {
+        return new Customer(new CustomerId(UUID.fromString(customerModel.getId())),
+                customerModel.getUsername(),
+                customerModel.getFirstName(),
+                customerModel.getLastName());
+    }
 
     public Restaurant createOrderCommandToRestaurant(CreateOrderCommand createOrderCommand) {
         return Restaurant.builder()

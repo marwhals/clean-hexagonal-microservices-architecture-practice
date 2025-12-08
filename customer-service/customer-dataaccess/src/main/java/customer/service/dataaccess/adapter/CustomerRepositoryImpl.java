@@ -4,6 +4,7 @@ import customer.service.dataaccess.mapper.CustomerDataAccessMapper;
 import customer.service.dataaccess.repository.CustomerJpaRepository;
 import customer.service.domain.entity.Customer;
 import customer.service.domain.ports.output.repository.CustomerRepository;
+import org.springframework.transaction.annotation.Transactional;
 
 public class CustomerRepositoryImpl implements CustomerRepository {
 
@@ -17,6 +18,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
     }
 
     @Override
+    @Transactional
     public Customer createCustomer(Customer customer) {
         return customerDataAccessMapper.customerEntityToCustomer(
                 customerJpaRepository.save(

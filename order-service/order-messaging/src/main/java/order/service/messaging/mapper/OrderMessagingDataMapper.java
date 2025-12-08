@@ -1,11 +1,9 @@
 package order.service.messaging.mapper;
 
-import core.domain.entity.Order;
-import core.domain.event.OrderCancelledEvent;
-import core.domain.event.OrderCreatedEvent;
-import core.domain.event.OrderPaidEvent;
+import com.food.ordering.system.kafka.order.avro.model.CustomerAvroModel;
 import kafka.order.avro.model.*;
 import org.springframework.stereotype.Component;
+import service.domain.dto.message.CustomerModel;
 import service.domain.dto.message.PaymentResponse;
 import service.domain.dto.message.RestaurantApprovalResponse;
 import service.domain.outbox.model.approval.OrderApprovalEventPayload;
@@ -16,6 +14,15 @@ import java.util.stream.Collectors;
 
 @Component
 public class OrderMessagingDataMapper {
+
+    public CustomerModel customerAvroModelToCustomerModel(CustomerAvroModel customerAvroModel) {
+        return CustomerModel.builder()
+                .id(customerAvroModel.getId())
+                .username(customerAvroModel.getUsername())
+                .firstName(customerAvroModel.getFirstName())
+                .lastName(customerAvroModel.getLastName())
+                .build();
+    }
 
     public PaymentResponse paymentResponseAvroModelToPaymentResponse(PaymentResponseAvroModel paymentResponseAvroModel) {
         return PaymentResponse.builder()
