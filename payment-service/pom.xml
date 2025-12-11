@@ -13,6 +13,9 @@
     <packaging>pom</packaging>
     <modules>
         <module>payment-domain</module>
+        <module>payment-dataaccess</module>
+        <module>payment-messaging</module>
+        <module>payment-container</module>
     </modules>
 
     <properties>
