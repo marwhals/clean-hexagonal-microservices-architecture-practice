@@ -25,6 +25,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static system.saga.order.SagaConstants.ORDER_SAGA_NAME;
 
+/**
+ * TODO - check sql scripts
+ */
 @Slf4j
 @SpringBootTest(classes = PaymentServiceApplication.class)
 public class PaymentRequestMessageListenerTest {
