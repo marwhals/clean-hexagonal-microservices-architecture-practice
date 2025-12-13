@@ -1,6 +1,6 @@
 package payment.service.domain.outbox.model;
 
-import core.domain.valueobject.PaymentStatus;
+import order.service.domain.valueobject.PaymentStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

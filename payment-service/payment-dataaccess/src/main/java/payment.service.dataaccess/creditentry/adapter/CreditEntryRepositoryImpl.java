@@ -1,6 +1,6 @@
 package payment.service.dataaccess.creditentry.adapter;
 
-import core.domain.valueobject.CustomerId;
+import order.service.domain.valueobject.CustomerId;
 import payment.service.dataaccess.creditentry.mapper.CreditEntryDataAccessMapper;
 import payment.service.dataaccess.creditentry.repository.CreditEntryJpaRepository;
 import payment.service.domain.entity.CreditEntry;

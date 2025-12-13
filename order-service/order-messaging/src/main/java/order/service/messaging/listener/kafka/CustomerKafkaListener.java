@@ -9,7 +9,7 @@ import org.springframework.kafka.support.KafkaHeaders;
 import org.springframework.messaging.handler.annotation.Header;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
-import service.domain.ports.input.service.message.listener.customer.CustomerMessageListener;
+import order.service.domain.ports.input.service.message.listener.customer.CustomerMessageListener;
 
 import java.util.List;
 

@@ -1,10 +1,10 @@
 package restaurant.service.domain.entity;
 
-import core.domain.entity.AggregateRoot;
-import core.domain.valueobject.Money;
-import core.domain.valueobject.OrderApprovalStatus;
-import core.domain.valueobject.OrderStatus;
-import core.domain.valueobject.RestaurantId;
+import order.service.domain.entity.AggregateRoot;
+import order.service.domain.valueobject.Money;
+import order.service.domain.valueobject.OrderApprovalStatus;
+import order.service.domain.valueobject.OrderStatus;
+import order.service.domain.valueobject.RestaurantId;
 import restaurant.service.domain.valueobject.OrderApprovalId;
 
 import java.util.List;

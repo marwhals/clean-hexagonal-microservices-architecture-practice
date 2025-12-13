@@ -2,8 +2,8 @@ package order.service.application.exception.handler;
 
 import application.handler.ErrorDTO;
 import application.handler.GlobalExceptionHandler;
-import core.domain.excecption.OrderDomainException;
-import core.domain.excecption.OrderNotFoundException;
+import order.service.domain.excecption.OrderDomainException;
+import order.service.domain.excecption.OrderNotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;

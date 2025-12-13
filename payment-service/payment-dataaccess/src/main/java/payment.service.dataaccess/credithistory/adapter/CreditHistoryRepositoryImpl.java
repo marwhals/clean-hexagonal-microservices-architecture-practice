@@ -1,6 +1,6 @@
 package payment.service.dataaccess.credithistory.adapter;
 
-import core.domain.valueobject.CustomerId;
+import order.service.domain.valueobject.CustomerId;
 import payment.service.dataaccess.credithistory.entity.CreditHistoryEntity;
 import payment.service.dataaccess.credithistory.mapper.CreditHistoryDataAccessMapper;
 import payment.service.dataaccess.credithistory.repository.CreditHistoryJpaRepository;

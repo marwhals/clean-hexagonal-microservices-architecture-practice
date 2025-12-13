@@ -1,6 +1,6 @@
 package order.service.messaging.listener.kafka;
 
-import core.domain.excecption.OrderNotFoundException;
+import order.service.domain.excecption.OrderNotFoundException;
 import kafka.consumer.KafkaConsumer;
 import kafka.order.avro.model.PaymentResponseAvroModel;
 import kafka.order.avro.model.PaymentStatus;
@@ -12,7 +12,7 @@ import org.springframework.kafka.support.KafkaHeaders;
 import org.springframework.messaging.handler.annotation.Header;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
-import service.domain.ports.input.service.message.listener.payment.PaymentResponseMessageListener;
+import order.service.domain.ports.input.service.message.listener.payment.PaymentResponseMessageListener;
 
 import java.util.List;
 

@@ -1,7 +1,7 @@
 package customer.service.domain.entity;
 
-import core.domain.entity.AggregateRoot;
-import core.domain.valueobject.CustomerId;
+import order.service.domain.entity.AggregateRoot;
+import order.service.domain.valueobject.CustomerId;
 
 public class Customer extends AggregateRoot<CustomerId> {
     private final String username;

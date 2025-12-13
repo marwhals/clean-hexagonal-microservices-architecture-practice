@@ -4,8 +4,10 @@ import customer.service.dataaccess.mapper.CustomerDataAccessMapper;
 import customer.service.dataaccess.repository.CustomerJpaRepository;
 import customer.service.domain.entity.Customer;
 import customer.service.domain.ports.output.repository.CustomerRepository;
+import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+@Component
 public class CustomerRepositoryImpl implements CustomerRepository {
 
     private final CustomerJpaRepository customerJpaRepository;

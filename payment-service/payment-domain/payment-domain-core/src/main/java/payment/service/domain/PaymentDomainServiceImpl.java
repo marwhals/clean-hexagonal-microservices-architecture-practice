@@ -1,8 +1,7 @@
 package payment.service.domain;
 
-import core.domain.event.publisher.DomainEventPublisher;
-import core.domain.valueobject.Money;
-import core.domain.valueobject.PaymentStatus;
+import order.service.domain.valueobject.Money;
+import order.service.domain.valueobject.PaymentStatus;
 import lombok.extern.slf4j.Slf4j;
 import payment.service.domain.entity.CreditEntry;
 import payment.service.domain.entity.CreditHistory;

@@ -1,7 +1,7 @@
 package payment.service.domain;
 
-import core.domain.valueobject.PaymentOrderStatus;
-import core.domain.valueobject.PaymentStatus;
+import order.service.domain.valueobject.PaymentOrderStatus;
+import order.service.domain.valueobject.PaymentStatus;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.postgresql.util.PSQLException;

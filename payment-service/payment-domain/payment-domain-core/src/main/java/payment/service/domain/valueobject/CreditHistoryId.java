@@ -1,6 +1,6 @@
 package payment.service.domain.valueobject;
 
-import core.domain.valueobject.BaseId;
+import order.service.domain.valueobject.BaseId;
 
 import java.util.UUID;
 

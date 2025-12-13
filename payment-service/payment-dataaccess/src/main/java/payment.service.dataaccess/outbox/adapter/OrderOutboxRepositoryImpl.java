@@ -1,6 +1,6 @@
 package payment.service.dataaccess.outbox.adapter;
 
-import core.domain.valueobject.PaymentStatus;
+import order.service.domain.valueobject.PaymentStatus;
 import org.springframework.stereotype.Component;
 import payment.service.dataaccess.outbox.exception.OrderOutboxNotFoundException;
 import payment.service.dataaccess.outbox.mapper.OrderOutboxDataAccessMapper;

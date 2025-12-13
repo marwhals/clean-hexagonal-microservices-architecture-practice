@@ -2,8 +2,9 @@ package payment.service.domain.outbox.scheduler;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import core.domain.valueobject.PaymentStatus;
+import order.service.domain.valueobject.PaymentStatus;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import payment.service.domain.exception.PaymentDomainException;
 import payment.service.domain.outbox.model.OrderEventPayload;
@@ -21,6 +22,7 @@ import static core.domain.DomainConstants.UTC;
 import static system.saga.order.SagaConstants.ORDER_SAGA_NAME;
 
 @Slf4j
+@Component
 public class OrderOutboxHelper {
 
     private final OrderOutboxRepository orderOutboxRepository;

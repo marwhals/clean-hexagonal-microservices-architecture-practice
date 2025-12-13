@@ -1,16 +1,15 @@
 package order.service.messaging.publisher.kafka;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import kafka.order.avro.model.RestaurantApprovalRequestAvroModel;
 import kafka.producer.KafkaMessageHelper;
 import kafka.producer.service.KafkaProducer;
 import lombok.extern.slf4j.Slf4j;
 import order.service.messaging.mapper.OrderMessagingDataMapper;
 import org.springframework.stereotype.Component;
-import service.domain.config.OrderServiceConfigData;
-import service.domain.outbox.model.approval.OrderApprovalEventPayload;
-import service.domain.outbox.model.approval.OrderApprovalOutboxMessage;
-import service.domain.ports.output.message.publisher.restaurantapproval.RestaurantApprovalRequestMessagePublisher;
+import order.service.domain.config.OrderServiceConfigData;
+import order.service.domain.outbox.model.approval.OrderApprovalEventPayload;
+import order.service.domain.outbox.model.approval.OrderApprovalOutboxMessage;
+import order.service.domain.ports.output.message.publisher.restaurantapproval.RestaurantApprovalRequestMessagePublisher;
 import system.outbox.OutboxStatus;
 
 import java.util.function.BiConsumer;

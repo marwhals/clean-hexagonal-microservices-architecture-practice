@@ -1,6 +1,6 @@
 package payment.service.domain.dto;
 
-import core.domain.valueobject.RestaurantOrderStatus;
+import order.service.domain.valueobject.RestaurantOrderStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

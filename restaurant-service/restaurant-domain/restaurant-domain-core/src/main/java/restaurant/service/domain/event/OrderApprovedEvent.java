@@ -1,6 +1,6 @@
 package restaurant.service.domain.event;
 
-import core.domain.valueobject.RestaurantId;
+import order.service.domain.valueobject.RestaurantId;
 import restaurant.service.domain.entity.OrderApproval;
 
 import java.time.ZonedDateTime;

@@ -1,7 +1,7 @@
 package restaurant.service.messaging.mapper;
 
-import core.domain.valueobject.ProductId;
-import core.domain.valueobject.RestaurantOrderStatus;
+import order.service.domain.valueobject.ProductId;
+import order.service.domain.valueobject.RestaurantOrderStatus;
 import kafka.order.avro.model.OrderApprovalStatus;
 import kafka.order.avro.model.RestaurantApprovalRequestAvroModel;
 import kafka.order.avro.model.RestaurantApprovalResponseAvroModel;

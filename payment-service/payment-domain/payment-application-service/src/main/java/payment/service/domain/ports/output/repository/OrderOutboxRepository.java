@@ -1,6 +1,6 @@
 package payment.service.domain.ports.output.repository;
 
-import core.domain.valueobject.PaymentStatus;
+import order.service.domain.valueobject.PaymentStatus;
 import payment.service.domain.outbox.model.OrderOutboxMessage;
 import system.outbox.OutboxStatus;
 

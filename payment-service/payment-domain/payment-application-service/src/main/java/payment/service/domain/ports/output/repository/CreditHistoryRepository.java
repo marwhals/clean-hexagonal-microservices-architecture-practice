@@ -1,6 +1,6 @@
 package payment.service.domain.ports.output.repository;
 
-import core.domain.valueobject.CustomerId;
+import order.service.domain.valueobject.CustomerId;
 import payment.service.domain.entity.CreditHistory;
 
 import java.util.List;

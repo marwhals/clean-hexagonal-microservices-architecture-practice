@@ -1,10 +1,10 @@
 package payment.service.domain.entity;
 
-import core.domain.entity.AggregateRoot;
-import core.domain.valueobject.CustomerId;
-import core.domain.valueobject.Money;
-import core.domain.valueobject.OrderId;
-import core.domain.valueobject.PaymentStatus;
+import order.service.domain.entity.AggregateRoot;
+import order.service.domain.valueobject.CustomerId;
+import order.service.domain.valueobject.Money;
+import order.service.domain.valueobject.OrderId;
+import order.service.domain.valueobject.PaymentStatus;
 import payment.service.domain.valueobject.PaymentId;
 
 import java.time.ZoneId;
