@@ -20,10 +20,12 @@ spring:
     username: myuser
     password: mypassword
     driver-class-name: org.postgresql.Driver
+
   sql:
     init:
       mode: always
       schema-locations: classpath:init-schema.sql
+
   jpa:
     open-in-view: false
     show-sql: true
@@ -57,12 +59,13 @@ kafka-producer-config:
   retry-count: 5
 
 kafka-consumer-config:
-  key-deserializer-class: org.apache.kafka.common.serialization.StringDeserializer
-  value-deserializer-class: io.confluent.kafka.serializers.KafkaAvroDeserializer
+  key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+  value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
   payment-consumer-group-id: payment-topic-consumer
   restaurant-approval-consumer-group-id: restaurant-approval-topic-consumer
   customer-group-id: customer-topic-consumer
   auto-offset-reset: earliest
+  specific-avro-reader-key: specific.avro.reader
   specific-avro-reader: true
   batch-listener: true
   auto-startup: true
@@ -71,4 +74,6 @@ kafka-consumer-config:
   heartbeat-interval-ms: 3000
   max-poll-interval-ms: 300000
   max-poll-records: 500
+  max-partition-fetch-bytes-default: 1048576
+  max-partition-fetch-bytes-boost-factor: 1
   poll-timeout-ms: 150
