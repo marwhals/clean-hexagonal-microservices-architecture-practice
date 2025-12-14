@@ -147,6 +147,4 @@ public class PaymentRequestHelper {
         }
         return false;
     }
-
-
 }
