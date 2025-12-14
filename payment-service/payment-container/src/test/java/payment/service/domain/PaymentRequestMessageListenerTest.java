@@ -10,8 +10,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.dao.DataAccessException;
 import payment.service.dataaccess.outbox.entity.OrderOutboxEntity;
 import payment.service.dataaccess.outbox.repository.OrderOutboxJpaRepository;
-import payment.service.domain.dto.PaymentRequest;
-import payment.service.domain.ports.input.message.listener.PaymentRequestMessageListener;
+import restaurant.service.domain.dto.PaymentRequest;
+import restaurant.service.domain.ports.input.message.listener.PaymentRequestMessageListener;
 import system.outbox.OutboxStatus;
 
 import java.math.BigDecimal;

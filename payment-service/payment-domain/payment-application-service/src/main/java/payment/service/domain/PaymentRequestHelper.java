@@ -5,19 +5,18 @@ import order.service.domain.valueobject.PaymentStatus;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import payment.service.domain.dto.PaymentRequest;
+import restaurant.service.domain.dto.PaymentRequest;
 import payment.service.domain.entity.CreditEntry;
 import payment.service.domain.entity.CreditHistory;
 import payment.service.domain.entity.Payment;
 import payment.service.domain.event.PaymentEvent;
-import payment.service.domain.exception.PaymentApplicationServiceException;
-import payment.service.domain.mapper.PaymentDataMapper;
-import payment.service.domain.outbox.model.OrderOutboxMessage;
-import payment.service.domain.outbox.scheduler.OrderOutboxHelper;
-import payment.service.domain.ports.output.message.publisher.PaymentResponseMessagePublisher;
-import payment.service.domain.ports.output.repository.CreditEntryRepository;
-import payment.service.domain.ports.output.repository.CreditHistoryRepository;
-import payment.service.domain.ports.output.repository.PaymentRepository;
+import restaurant.service.domain.exception.PaymentApplicationServiceException;
+import restaurant.service.domain.mapper.PaymentDataMapper;
+import restaurant.service.domain.outbox.model.OrderOutboxMessage;
+import restaurant.service.domain.outbox.scheduler.OrderOutboxHelper;
+import restaurant.service.domain.ports.output.repository.CreditEntryRepository;
+import restaurant.service.domain.ports.output.repository.CreditHistoryRepository;
+import restaurant.service.domain.ports.output.repository.PaymentRepository;
 import system.outbox.OutboxStatus;
 
 import java.util.ArrayList;
@@ -35,27 +34,24 @@ public class PaymentRequestHelper {
     private final CreditEntryRepository creditEntryRepository;
     private final CreditHistoryRepository creditHistoryRepository;
     private final OrderOutboxHelper orderOutboxHelper;
-    private final PaymentResponseMessagePublisher paymentResponseMessagePublisher;
 
     public PaymentRequestHelper(PaymentDomainService paymentDomainService,
                                 PaymentDataMapper paymentDataMapper,
                                 PaymentRepository paymentRepository,
                                 CreditEntryRepository creditEntryRepository,
                                 CreditHistoryRepository creditHistoryRepository,
-                                OrderOutboxHelper orderOutboxHelper,
-                                PaymentResponseMessagePublisher paymentResponseMessagePublisher) {
+                                OrderOutboxHelper orderOutboxHelper) {
         this.paymentDomainService = paymentDomainService;
         this.paymentDataMapper = paymentDataMapper;
         this.paymentRepository = paymentRepository;
         this.creditEntryRepository = creditEntryRepository;
         this.creditHistoryRepository = creditHistoryRepository;
         this.orderOutboxHelper = orderOutboxHelper;
-        this.paymentResponseMessagePublisher = paymentResponseMessagePublisher;
     }
 
     @Transactional
     public void persistPayment(PaymentRequest paymentRequest) {
-        if (publishIfOutboxMessageProcessedForPayment(paymentRequest, PaymentStatus.CANCELLED)) {
+        if (isOutboxMessageProcessedForPayment(paymentRequest, PaymentStatus.CANCELLED)) {
             log.info("An outbox message with saga id: {} is already saved to database!",
                     paymentRequest.getSagaId());
             return;
@@ -140,14 +136,13 @@ public class PaymentRequestHelper {
         }
     }
 
-    private boolean publishIfOutboxMessageProcessedForPayment(PaymentRequest paymentRequest,
-                                                              PaymentStatus paymentStatus) {
+    private boolean isOutboxMessageProcessedForPayment(PaymentRequest paymentRequest,
+                                                       PaymentStatus paymentStatus) {
         Optional<OrderOutboxMessage> orderOutboxMessage =
                 orderOutboxHelper.getCompletedOrderOutboxMessageBySagaIdAndPaymentStatus(
                         UUID.fromString(paymentRequest.getSagaId()),
                         paymentStatus);
         if (orderOutboxMessage.isPresent()) {
-            paymentResponseMessagePublisher.publish(orderOutboxMessage.get(), orderOutboxHelper::updateOutboxMessage);
             return true;
         }
         return false;

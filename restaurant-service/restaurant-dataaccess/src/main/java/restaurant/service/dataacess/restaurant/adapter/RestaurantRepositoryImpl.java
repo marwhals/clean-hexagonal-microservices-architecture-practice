@@ -3,7 +3,7 @@ package restaurant.service.dataacess.restaurant.adapter;
 import dataaccess.restaurant.entity.RestaurantEntity;
 import dataaccess.restaurant.repository.RestaurantJpaRepository;
 import org.springframework.stereotype.Component;
-import payment.service.domain.ports.output.repository.RestaurantRepository;
+import restaurant.service.domain.ports.output.repository.RestaurantRepository;
 import restaurant.service.dataacess.restaurant.mapper.RestaurantDataAccessMapper;
 import restaurant.service.domain.entity.Restaurant;
 

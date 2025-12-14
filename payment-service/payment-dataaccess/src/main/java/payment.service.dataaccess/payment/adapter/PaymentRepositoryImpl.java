@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 import payment.service.dataaccess.payment.mapper.PaymentDataAccessMapper;
 import payment.service.dataaccess.payment.repository.PaymentJpaRepository;
 import payment.service.domain.entity.Payment;
-import payment.service.domain.ports.output.repository.PaymentRepository;
+import restaurant.service.domain.ports.output.repository.PaymentRepository;
 
 import java.util.Optional;
 import java.util.UUID;

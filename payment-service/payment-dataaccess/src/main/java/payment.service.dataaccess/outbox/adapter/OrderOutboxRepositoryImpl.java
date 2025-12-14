@@ -5,8 +5,8 @@ import org.springframework.stereotype.Component;
 import payment.service.dataaccess.outbox.exception.OrderOutboxNotFoundException;
 import payment.service.dataaccess.outbox.mapper.OrderOutboxDataAccessMapper;
 import payment.service.dataaccess.outbox.repository.OrderOutboxJpaRepository;
-import payment.service.domain.outbox.model.OrderOutboxMessage;
-import payment.service.domain.ports.output.repository.OrderOutboxRepository;
+import restaurant.service.domain.outbox.model.OrderOutboxMessage;
+import restaurant.service.domain.ports.output.repository.OrderOutboxRepository;
 import system.outbox.OutboxStatus;
 
 import java.util.List;

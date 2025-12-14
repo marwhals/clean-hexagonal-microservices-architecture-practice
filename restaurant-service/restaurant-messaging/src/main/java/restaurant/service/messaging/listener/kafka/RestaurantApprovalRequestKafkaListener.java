@@ -10,8 +10,8 @@ import org.springframework.kafka.support.KafkaHeaders;
 import org.springframework.messaging.handler.annotation.Header;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
-import payment.service.domain.exception.RestaurantApplicationServiceException;
-import payment.service.domain.ports.input.message.listener.RestaurantApprovalRequestMessageListener;
+import restaurant.service.domain.exception.RestaurantApplicationServiceException;
+import restaurant.service.domain.ports.input.message.listener.RestaurantApprovalRequestMessageListener;
 import restaurant.service.domain.exception.RestaurantNotFoundException;
 import restaurant.service.messaging.mapper.RestaurantMessagingDataMapper;
 

@@ -6,8 +6,8 @@ import kafka.order.avro.model.PaymentRequestAvroModel;
 import kafka.order.avro.model.PaymentResponseAvroModel;
 import kafka.order.avro.model.PaymentStatus;
 import org.springframework.stereotype.Component;
-import payment.service.domain.dto.PaymentRequest;
-import payment.service.domain.outbox.model.OrderEventPayload;
+import restaurant.service.domain.dto.PaymentRequest;
+import restaurant.service.domain.outbox.model.OrderEventPayload;
 
 import java.util.UUID;
 

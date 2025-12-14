@@ -2,7 +2,7 @@ package payment.service.dataaccess.outbox.mapper;
 
 import org.springframework.stereotype.Component;
 import payment.service.dataaccess.outbox.entity.OrderOutboxEntity;
-import payment.service.domain.outbox.model.OrderOutboxMessage;
+import restaurant.service.domain.outbox.model.OrderOutboxMessage;
 
 @Component
 public class OrderOutboxDataAccessMapper {

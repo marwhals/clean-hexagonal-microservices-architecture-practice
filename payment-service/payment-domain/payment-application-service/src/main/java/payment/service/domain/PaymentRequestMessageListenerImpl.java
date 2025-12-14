@@ -2,9 +2,8 @@ package payment.service.domain;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import payment.service.domain.dto.PaymentRequest;
-import payment.service.domain.event.PaymentEvent;
-import payment.service.domain.ports.input.message.listener.PaymentRequestMessageListener;
+import restaurant.service.domain.dto.PaymentRequest;
+import restaurant.service.domain.ports.input.message.listener.PaymentRequestMessageListener;
 
 @Slf4j
 @Service

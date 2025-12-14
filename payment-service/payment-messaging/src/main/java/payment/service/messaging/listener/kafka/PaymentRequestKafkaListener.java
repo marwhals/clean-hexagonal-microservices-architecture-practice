@@ -11,9 +11,9 @@ import org.springframework.kafka.support.KafkaHeaders;
 import org.springframework.messaging.handler.annotation.Header;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
-import payment.service.domain.exception.PaymentApplicationServiceException;
-import payment.service.domain.exception.PaymentNotFoundException;
-import payment.service.domain.ports.input.message.listener.PaymentRequestMessageListener;
+import restaurant.service.domain.exception.PaymentApplicationServiceException;
+import restaurant.service.domain.exception.PaymentNotFoundException;
+import restaurant.service.domain.ports.input.message.listener.PaymentRequestMessageListener;
 import payment.service.messaging.mapper.PaymentMessagingDataMapper;
 
 import java.sql.SQLException;

@@ -14,14 +14,23 @@ import java.time.ZonedDateTime;
 public class OrderPaymentEventPayload {
 
     @JsonProperty
+    private String id;
+
+    @JsonProperty
+    private String sagaId;
+
+    @JsonProperty
     private String orderId;
+
     @JsonProperty
     private String customerId;
+
     @JsonProperty
     private BigDecimal price;
+
     @JsonProperty
     private ZonedDateTime createdAt;
+
     @JsonProperty
     private String paymentOrderStatus;
-
 }
