@@ -1,6 +1,6 @@
 package customer.service.domain.event;
 
-import order.service.domain.event.DomainEvent;
+import core.domain.event.DomainEvent;
 import customer.service.domain.entity.Customer;
 
 import java.time.ZonedDateTime;

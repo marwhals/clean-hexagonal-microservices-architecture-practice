@@ -1,6 +1,6 @@
 package customer.service.dataaccess.mapper;
 
-import order.service.domain.valueobject.CustomerId;
+import core.domain.valueobject.CustomerId;
 import customer.service.dataaccess.entity.CustomerEntity;
 import customer.service.domain.entity.Customer;
 import org.springframework.stereotype.Component;

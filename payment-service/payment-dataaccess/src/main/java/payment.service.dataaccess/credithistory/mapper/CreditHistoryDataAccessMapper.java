@@ -1,8 +1,8 @@
 package payment.service.dataaccess.credithistory.mapper;
 
 
-import order.service.domain.valueobject.CustomerId;
-import order.service.domain.valueobject.Money;
+import core.domain.valueobject.CustomerId;
+import core.domain.valueobject.Money;
 import payment.service.dataaccess.credithistory.entity.CreditHistoryEntity;
 import payment.service.domain.entity.CreditHistory;
 import payment.service.domain.valueobject.CreditHistoryId;

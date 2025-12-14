@@ -1,7 +1,8 @@
 package order.service.domain.entity;
 
-import order.service.domain.valueobject.Money;
-import order.service.domain.valueobject.ProductId;
+import core.domain.entity.BaseEntity;
+import core.domain.valueobject.Money;
+import core.domain.valueobject.ProductId;
 
 public class Product extends BaseEntity<ProductId> {
     private String name;

@@ -3,7 +3,7 @@ package order.service.domain;
 import order.service.domain.entity.Order;
 import order.service.domain.event.OrderCancelledEvent;
 import order.service.domain.excecption.OrderDomainException;
-import order.service.domain.valueobject.OrderStatus;
+import core.domain.valueobject.OrderStatus;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;

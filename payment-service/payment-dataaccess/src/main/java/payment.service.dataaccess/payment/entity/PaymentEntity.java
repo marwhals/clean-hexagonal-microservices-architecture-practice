@@ -1,6 +1,6 @@
 package payment.service.dataaccess.payment.entity;
 
-import order.service.domain.valueobject.PaymentStatus;
+import core.domain.valueobject.PaymentStatus;
 import jakarta.persistence.*;
 import lombok.*;
 

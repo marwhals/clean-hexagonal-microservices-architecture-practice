@@ -1,8 +1,8 @@
 package payment.service.domain.entity;
 
-import order.service.domain.entity.BaseEntity;
-import order.service.domain.valueobject.CustomerId;
-import order.service.domain.valueobject.Money;
+import core.domain.entity.BaseEntity;
+import core.domain.valueobject.CustomerId;
+import core.domain.valueobject.Money;
 import payment.service.domain.valueobject.CreditEntryId;
 
 public class CreditEntry extends BaseEntity<CreditEntryId> {

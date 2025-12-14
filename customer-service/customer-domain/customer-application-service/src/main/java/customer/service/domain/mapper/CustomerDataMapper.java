@@ -1,6 +1,6 @@
 package customer.service.domain.mapper;
 
-import order.service.domain.valueobject.CustomerId;
+import core.domain.valueobject.CustomerId;
 import customer.service.domain.create.CreateCustomerCommand;
 import customer.service.domain.create.CreateCustomerResponse;
 import customer.service.domain.entity.Customer;

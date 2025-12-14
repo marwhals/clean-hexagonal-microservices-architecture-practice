@@ -1,7 +1,7 @@
 package payment.service.dataaccess.payment.mapper;
-import order.service.domain.valueobject.CustomerId;
-import order.service.domain.valueobject.Money;
-import order.service.domain.valueobject.OrderId;
+import core.domain.valueobject.CustomerId;
+import core.domain.valueobject.Money;
+import core.domain.valueobject.OrderId;
 import payment.service.dataaccess.payment.entity.PaymentEntity;
 import payment.service.domain.entity.Payment;
 import payment.service.domain.valueobject.PaymentId;

@@ -1,7 +1,7 @@
 package order.service.dataaccess.order.adapter;
 
 import order.service.domain.entity.Order;
-import order.service.domain.valueobject.OrderId;
+import core.domain.valueobject.OrderId;
 import order.service.domain.valueobject.TrackingId;
 import org.springframework.stereotype.Component;
 import order.service.dataaccess.order.mapper.OrderDataAccessMapper;

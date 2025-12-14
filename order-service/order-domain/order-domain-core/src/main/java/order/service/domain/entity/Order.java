@@ -1,5 +1,7 @@
 package order.service.domain.entity;
 
+import core.domain.entity.AggregateRoot;
+import core.domain.valueobject.*;
 import order.service.domain.excecption.OrderDomainException;
 import order.service.domain.valueobject.*;
 

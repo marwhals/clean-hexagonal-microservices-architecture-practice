@@ -1,9 +1,9 @@
 package restaurant.service.domain.mapper;
 
-import order.service.domain.valueobject.Money;
-import order.service.domain.valueobject.OrderId;
-import order.service.domain.valueobject.OrderStatus;
-import order.service.domain.valueobject.RestaurantId;
+import core.domain.valueobject.Money;
+import core.domain.valueobject.OrderId;
+import core.domain.valueobject.OrderStatus;
+import core.domain.valueobject.RestaurantId;
 import org.springframework.stereotype.Component;
 import restaurant.service.domain.dto.RestaurantApprovalRequest;
 import restaurant.service.domain.outbox.model.OrderEventPayload;

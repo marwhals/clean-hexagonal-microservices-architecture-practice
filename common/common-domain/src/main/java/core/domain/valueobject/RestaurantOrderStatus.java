@@ -1,4 +1,4 @@
-package order.service.domain.valueobject;
+package core.domain.valueobject;
 
 public enum RestaurantOrderStatus {
     PAID

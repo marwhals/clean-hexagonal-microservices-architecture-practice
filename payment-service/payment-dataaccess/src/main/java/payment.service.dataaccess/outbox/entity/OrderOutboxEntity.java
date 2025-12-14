@@ -1,6 +1,6 @@
 package payment.service.dataaccess.outbox.entity;
 
-import order.service.domain.valueobject.PaymentStatus;
+import core.domain.valueobject.PaymentStatus;
 import jakarta.persistence.*;
 import lombok.*;
 import system.outbox.OutboxStatus;

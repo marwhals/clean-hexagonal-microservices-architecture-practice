@@ -1,6 +1,6 @@
 package restaurant.service.domain;
 
-import order.service.domain.valueobject.OrderApprovalStatus;
+import core.domain.valueobject.OrderApprovalStatus;
 import lombok.extern.slf4j.Slf4j;
 import restaurant.service.domain.entity.Restaurant;
 import restaurant.service.domain.event.OrderApprovalEvent;

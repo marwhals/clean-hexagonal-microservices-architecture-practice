@@ -1,6 +1,6 @@
 package order.service.dataaccess.order.entity;
 
-import order.service.domain.valueobject.OrderStatus;
+import core.domain.valueobject.OrderStatus;
 import jakarta.persistence.*;
 import lombok.*;
 

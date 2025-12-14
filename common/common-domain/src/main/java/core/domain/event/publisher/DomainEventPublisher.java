@@ -1,6 +1,6 @@
-package order.service.domain.event.publisher;
+package core.domain.event.publisher;
 
-import order.service.domain.event.DomainEvent;
+import core.domain.event.DomainEvent;
 
 public interface DomainEventPublisher<T extends DomainEvent> {
 

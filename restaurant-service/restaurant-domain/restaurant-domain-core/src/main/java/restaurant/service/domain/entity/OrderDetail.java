@@ -1,9 +1,9 @@
 package restaurant.service.domain.entity;
 
-import order.service.domain.entity.BaseEntity;
-import order.service.domain.valueobject.Money;
-import order.service.domain.valueobject.OrderId;
-import order.service.domain.valueobject.OrderStatus;
+import core.domain.entity.BaseEntity;
+import core.domain.valueobject.Money;
+import core.domain.valueobject.OrderId;
+import core.domain.valueobject.OrderStatus;
 
 import java.util.List;
 

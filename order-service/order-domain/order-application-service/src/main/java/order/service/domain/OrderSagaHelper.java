@@ -2,8 +2,8 @@ package order.service.domain;
 
 import order.service.domain.entity.Order;
 import order.service.domain.excecption.OrderNotFoundException;
-import order.service.domain.valueobject.OrderId;
-import order.service.domain.valueobject.OrderStatus;
+import core.domain.valueobject.OrderId;
+import core.domain.valueobject.OrderStatus;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import order.service.domain.ports.output.repository.OrderRepository;

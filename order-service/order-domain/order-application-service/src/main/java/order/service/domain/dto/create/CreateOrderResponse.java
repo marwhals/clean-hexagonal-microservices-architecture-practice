@@ -1,6 +1,6 @@
 package order.service.domain.dto.create;
 
-import order.service.domain.valueobject.OrderStatus;
+import core.domain.valueobject.OrderStatus;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

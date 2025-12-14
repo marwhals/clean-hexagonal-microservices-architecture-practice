@@ -1,6 +1,6 @@
 package payment.service.dataaccess.outbox.repository;
 
-import order.service.domain.valueobject.PaymentStatus;
+import core.domain.valueobject.PaymentStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import payment.service.dataaccess.outbox.entity.OrderOutboxEntity;

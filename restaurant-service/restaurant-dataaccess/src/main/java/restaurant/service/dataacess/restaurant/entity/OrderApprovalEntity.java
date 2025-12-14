@@ -1,6 +1,6 @@
 package restaurant.service.dataacess.restaurant.entity;
 
-import order.service.domain.valueobject.OrderApprovalStatus;
+import core.domain.valueobject.OrderApprovalStatus;
 import jakarta.persistence.*;
 import lombok.*;
 

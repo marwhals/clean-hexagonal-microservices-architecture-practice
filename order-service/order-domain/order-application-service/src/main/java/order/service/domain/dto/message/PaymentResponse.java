@@ -1,6 +1,6 @@
 package order.service.domain.dto.message;
 
-import order.service.domain.valueobject.PaymentStatus;
+import core.domain.valueobject.PaymentStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

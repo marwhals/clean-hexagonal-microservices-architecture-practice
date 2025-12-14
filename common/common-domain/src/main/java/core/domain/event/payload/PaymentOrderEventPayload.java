@@ -1,4 +1,4 @@
-package order.service.domain.outbox.model.payment;
+package core.domain.event.payload;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
@@ -7,30 +7,24 @@ import lombok.Getter;
 
 import java.math.BigDecimal;
 import java.time.ZonedDateTime;
+import java.util.List;
 
 @Getter
 @Builder
 @AllArgsConstructor
-public class OrderPaymentEventPayload {
-
+public class PaymentOrderEventPayload {
     @JsonProperty
-    private String id;
-
-    @JsonProperty
-    private String sagaId;
-
-    @JsonProperty
-    private String orderId;
-
+    private String paymentId;
     @JsonProperty
     private String customerId;
-
+    @JsonProperty
+    private String orderId;
     @JsonProperty
     private BigDecimal price;
-
     @JsonProperty
     private ZonedDateTime createdAt;
-
     @JsonProperty
-    private String paymentOrderStatus;
+    private String paymentStatus;
+    @JsonProperty
+    private List<String> failureMessages;
 }

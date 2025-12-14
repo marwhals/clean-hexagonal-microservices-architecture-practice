@@ -1,4 +1,4 @@
-package order.service.domain.event;
+package core.domain.event;
 
 public interface DomainEvent<T> {
 }

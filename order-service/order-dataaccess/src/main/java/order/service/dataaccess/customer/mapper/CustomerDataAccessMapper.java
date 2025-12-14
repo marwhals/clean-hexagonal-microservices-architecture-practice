@@ -1,7 +1,7 @@
 package order.service.dataaccess.customer.mapper;
 
 import order.service.domain.entity.Customer;
-import order.service.domain.valueobject.CustomerId;
+import core.domain.valueobject.CustomerId;
 import org.springframework.stereotype.Component;
 import order.service.dataaccess.customer.entity.CustomerEntity;
 

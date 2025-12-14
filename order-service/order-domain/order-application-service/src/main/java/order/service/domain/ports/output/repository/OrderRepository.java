@@ -1,7 +1,7 @@
 package order.service.domain.ports.output.repository;
 
 import order.service.domain.entity.Order;
-import order.service.domain.valueobject.OrderId;
+import core.domain.valueobject.OrderId;
 import order.service.domain.valueobject.TrackingId;
 
 import java.util.Optional;

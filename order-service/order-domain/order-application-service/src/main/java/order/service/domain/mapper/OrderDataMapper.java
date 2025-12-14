@@ -1,5 +1,6 @@
 package order.service.domain.mapper;
 
+import core.domain.valueobject.*;
 import order.service.domain.entity.*;
 import order.service.domain.event.OrderCancelledEvent;
 import order.service.domain.event.OrderCreatedEvent;
@@ -11,9 +12,9 @@ import order.service.domain.dto.create.CreateOrderResponse;
 import order.service.domain.dto.create.OrderAddress;
 import order.service.domain.dto.message.CustomerModel;
 import order.service.domain.dto.track.TrackOrderResponse;
-import order.service.domain.outbox.model.approval.OrderApprovalEventPayload;
-import order.service.domain.outbox.model.approval.OrderApprovalEventProduct;
-import order.service.domain.outbox.model.payment.OrderPaymentEventPayload;
+import core.domain.event.payload.OrderApprovalEventPayload;
+import core.domain.event.payload.OrderApprovalEventProduct;
+import core.domain.event.payload.OrderPaymentEventPayload;
 
 import java.util.List;
 import java.util.UUID;

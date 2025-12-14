@@ -1,9 +1,9 @@
 package restaurant.service.domain.entity;
 
-import order.service.domain.entity.BaseEntity;
-import order.service.domain.valueobject.OrderApprovalStatus;
-import order.service.domain.valueobject.OrderId;
-import order.service.domain.valueobject.RestaurantId;
+import core.domain.entity.BaseEntity;
+import core.domain.valueobject.OrderApprovalStatus;
+import core.domain.valueobject.OrderId;
+import core.domain.valueobject.RestaurantId;
 import restaurant.service.domain.valueobject.OrderApprovalId;
 
 public class OrderApproval extends BaseEntity<OrderApprovalId> {

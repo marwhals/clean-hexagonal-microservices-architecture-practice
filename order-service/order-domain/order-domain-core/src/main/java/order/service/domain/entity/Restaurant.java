@@ -1,6 +1,7 @@
 package order.service.domain.entity;
 
-import order.service.domain.valueobject.RestaurantId;
+import core.domain.entity.AggregateRoot;
+import core.domain.valueobject.RestaurantId;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
 package payment.service.domain.event;
 
-import order.service.domain.event.DomainEvent;
+import core.domain.event.DomainEvent;
 import payment.service.domain.entity.Payment;
 
 import java.time.ZonedDateTime;

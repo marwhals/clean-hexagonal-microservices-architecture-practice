@@ -1,4 +1,4 @@
-package order.service.domain.entity;
+package core.domain.entity;
 
 public abstract class AggregateRoot<ID> extends BaseEntity<ID> {
 }

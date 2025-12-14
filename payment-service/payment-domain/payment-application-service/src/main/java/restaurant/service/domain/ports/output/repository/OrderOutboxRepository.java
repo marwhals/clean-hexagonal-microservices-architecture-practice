@@ -1,6 +1,6 @@
 package restaurant.service.domain.ports.output.repository;
 
-import order.service.domain.valueobject.PaymentStatus;
+import core.domain.valueobject.PaymentStatus;
 import restaurant.service.domain.outbox.model.OrderOutboxMessage;
 import system.outbox.OutboxStatus;
 

@@ -1,8 +1,8 @@
 package restaurant.service.domain.mapper;
 
-import order.service.domain.valueobject.CustomerId;
-import order.service.domain.valueobject.Money;
-import order.service.domain.valueobject.OrderId;
+import core.domain.valueobject.CustomerId;
+import core.domain.valueobject.Money;
+import core.domain.valueobject.OrderId;
 import org.springframework.stereotype.Component;
 import restaurant.service.domain.dto.PaymentRequest;
 import payment.service.domain.entity.Payment;

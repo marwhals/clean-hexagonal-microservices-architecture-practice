@@ -1,4 +1,4 @@
-package order.service.domain.entity;
+package core.domain.entity;
 
 import java.util.Objects;
 

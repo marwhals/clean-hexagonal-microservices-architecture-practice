@@ -1,7 +1,7 @@
 package payment.service.messaging.mapper;
 
 
-import order.service.domain.valueobject.PaymentOrderStatus;
+import core.domain.valueobject.PaymentOrderStatus;
 import kafka.order.avro.model.PaymentRequestAvroModel;
 import kafka.order.avro.model.PaymentResponseAvroModel;
 import kafka.order.avro.model.PaymentStatus;
