@@ -1,6 +1,6 @@
 package order.service.messaging.mapper;
 
-import com.food.ordering.system.kafka.order.avro.model.CustomerAvroModel;
+import kafka.order.avro.model.CustomerAvroModel;
 import kafka.order.avro.model.*;
 import org.springframework.stereotype.Component;
 import order.service.domain.dto.message.CustomerModel;

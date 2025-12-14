@@ -1,6 +1,6 @@
 package customer.service.messaging.publisher.kafka;
 
-import com.food.ordering.system.kafka.order.avro.model.CustomerAvroModel;
+import kafka.order.avro.model.CustomerAvroModel;
 import customer.service.domain.config.CustomerServiceConfigData;
 import customer.service.domain.event.CustomerCreatedEvent;
 import customer.service.domain.ports.output.message.publisher.CustomerMessagePublisher;

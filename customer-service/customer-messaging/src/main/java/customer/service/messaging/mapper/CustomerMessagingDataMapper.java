@@ -1,6 +1,6 @@
 package customer.service.messaging.mapper;
 
-import com.food.ordering.system.kafka.order.avro.model.CustomerAvroModel;
+import kafka.order.avro.model.CustomerAvroModel;
 import customer.service.domain.event.CustomerCreatedEvent;
 import org.springframework.stereotype.Component;
 

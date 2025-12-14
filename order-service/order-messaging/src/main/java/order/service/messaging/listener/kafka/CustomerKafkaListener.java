@@ -1,6 +1,6 @@
 package order.service.messaging.listener.kafka;
 
-import com.food.ordering.system.kafka.order.avro.model.CustomerAvroModel;
+import kafka.order.avro.model.CustomerAvroModel;
 import kafka.consumer.KafkaConsumer;
 import lombok.extern.slf4j.Slf4j;
 import order.service.messaging.mapper.OrderMessagingDataMapper;
